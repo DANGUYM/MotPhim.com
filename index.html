@@ -19,10 +19,109 @@
 	<meta name="description" content="Trang xem phim số một Việt Nam, phim mới và phim sớm" />
 	<meta name="keywords" content="phim trung quoc, phim han quoc, phim ngon tinh, anime, vietsub, phim chieu rap" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/home.css">
 
 </head>
 <body>
-    
+    <header class="header">
+        <div class="header-container">
+            <div class="header-img">
+                <a href="/"><img src="assets/img/logo_white.png" alt="Logo chính thức"></a>
+            </div>
+            <div class="header-menu">
+                <div class="header-menu-items">
+                    <a href="/the-loai">Thể loại</a>
+                </div>
+                <div class="header-menu-items">
+                    <a href="/phim-le">Phim lẻ</a>
+                </div>
+                <div class="header-menu-items">
+                    <a href="/phim-bo">Phim bộ</a>
+                </div>
+                <div class="header-menu-items hidden-ipad">
+                    <a href="/phim-chieu-rap">Phim chiếu rạp</a>
+                </div>
+                <div class="header-menu-items hidden-ipad">
+                    <a href="/bang-xep-hang">Bảng xếp hạng</a>
+                </div>
+                <div class="header-search hidden-ipad">
+                    <div class="search-box">
+                        <input type="text" name="search-box" placeholder="Tìm kiếm" autocomplete="off">
+                        <i class="fa fa-search"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="header-user">
+                <div class="user-login user-avatar" id="user-avatar">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="user-login user-avatar" id="change-theme">
+                    <i class="fa fa-sun-o"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <selection class="slideshow">
+            <div class="slideshow-container">
+
+                <div class="slideshow-items slideshow-animation">
+                    <img src="assets/img/slideshow/slide1.jpg">
+                    <div class="slideshow-info">Bungou Stray Dogs</div>
+                </div>
+
+                <div class="slideshow-items slideshow-animation">
+                    <img src="assets/img/slideshow/slide2.jpg">
+                    <div class="slideshow-info">Tensei Oujo to Tensai Reijou no Mahou Kakumei</div>
+                </div>
+
+                <div class="slideshow-items slideshow-animation">
+                    <img src="assets/img/slideshow/slide3.jpg">
+                    <div class="slideshow-info">Majutsushi Orphen Hagure Tabi</div>
+                </div>
+
+                <div class="slideshow-items slideshow-animation">
+                    <img src="assets/img/slideshow/slide4.jpg">
+                    <div class="slideshow-info">Tokyo 卍 Revengers</div>
+                </div>
+
+            </div>
+        </selection>
+
+        <selection class="tray">
+            <div class="tray-title">
+                <i class="fa fa-video-camera"></i>
+                <h5>
+                    <a href="/moi-cap-nhat">Mới cập nhật</a>
+                </h5>
+            </div>
+        </selection>
+
+    </div>
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides(){
+            let i;
+            let slides = document.getElementsByClassName("slideshow-items");
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }  
+            
+            slides[slideIndex-1].style.display = "block";  
+
+            setTimeout(showSlides, 4000);
+
+        }
+    </script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+
 </body>
 </html>

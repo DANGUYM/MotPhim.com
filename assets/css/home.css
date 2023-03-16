@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    margin:0px;
+    font-family: 'Open Sans', sans-serif;
+    color:#333;
+    font-size: 14px;
+    line-height: 1.428571429;
+}
+
+input {
+    line-height: normal;
+}
+
+a {
+    text-decoration: none;
+}
+
+.header {
+    width: 100%;
+    height: 60px;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    z-index: 99;
+    border-bottom: 1px solid #dadada;
+    box-shadow: 0 0 1px 0 #adadad;
+    display: block;
+}
+
+.header-img {
+    justify-content: space-between;
+    padding-right:50px;
+}
+
+.header-img img {
+    max-width: 180px;
+    margin: 10px;
+}
+
+.header-menu {
+    overflow: visible;
+    margin-right: 20px;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.header .header-container {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    position: relative;
+}
+
+.header-menu-items {
+    font-size: 14px;
+    line-height: 60px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background .3s;
+    font-weight: 500;
+    display: inline;
+    margin: 0 8px;
+    padding: 5px;
+}
+
+.header-menu-items:hover a {
+    color: #d60000;
+}
+
+.header-search {
+    position: absolute;
+    width: 170px;
+    display: inline;
+    margin-left: 100px;
+    padding-top:10px;
+}
+
+.search-box input {
+    border: 1px solid #dadada;
+    border-radius: 15px;
+    display: block;
+    font-size: 13px;
+    height: 30px;
+    padding-left: 10px;
+    padding-right: 30px;
+    width: 100%;
+}
+
+.header-search .fa {
+    color: #dadada;
+    cursor: pointer;
+    font-size: 20px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    right: -32px;
+    text-align: center;
+    top: 15px;
+    width: 20px;
+}
+
+.header-search .fa:hover {
+    color: #333;
+}
+
+.header-user {
+    position: absolute;
+    right: 0;
+    float: right;
+    margin: 10px;
+    height: 60px;
+    justify-content: flex-end;
+}
+
+.header-user .user-login {
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    width: 40px;
+}
+
+.user-avatar {
+    background: #f3f4f6;
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    height: 40px;
+    overflow: hidden;
+    position: relative;
+    transition: width .5s,height .5s;
+    width: 40px;
+}
+
+.user-avatar:hover {
+    box-shadow: 0 0 5px rgb(150, 150, 150);
+}
+
+#change-theme {
+    margin-right: 10px;
+}
+
+.container {
+    margin: auto;
+    overflow: hidden;
+    padding: 60px 0;
+    position: relative;
+}
+
+.tray {
+    clear: both;
+    margin-top: 20px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tray-title {
+    font-size: 16px;
+    margin-bottom: 5px;
+    position: relative;
+    text-transform: uppercase;
+}
+
+.tray-title .fa {
+    position: absolute;
+    border: 0;
+    font-size: 27px;
+    line-height: 46px;
+    margin-left: 11px;
+    color:#d60000;
+}
+
+.tray-title h5 {
+    font-size: 20px;
+    font-weight: 400;
+    height: 30px;
+    letter-spacing: 3px;
+    line-height: 40px;
+    margin: 20px 10px 20px 45px;
+}
+
+.tray-title a{
+    color:#d60000;
+}
+
+.tray-title:hover a {
+    color:#f60000;
+}
+
+.tray-title:hover .fa{
+    color:#f60000;
+}
+
+.slideshow {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+.slideshow-info {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,0),rgba(0,0,0,.39) 34%,#000 87%);
+}
+
+.slideshow-animation {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.slideshow-items img {
+    width: 100%;
+    vertical-align: middle;
+}
+
+.slideshow-items {
+    display: none;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+/*Trên giao diện PC (Giao diện ở TV)*/
+@media screen and (min-width: 1336px) {
+    .header .header-container {
+        width: 1310px;
+    }
+    .container {
+        width: 990px;
+    }
+}
+
+/*Giao diện Ipad ngang (1024 x 768)*/
+@media screen and (max-width: 1024px){
+    .hidden-ipad {
+        display: none;
+    }
+}
+
+/*Giao diện Ipad dọc (768 x 1024)*/
+@media screen and (max-width: 768px){
+    .header-menu {
+        display: none;
+    }
+
+    .slideshow {
+        display: none;
+    }
+}
+
+/*Giao diện Tablet (480 x 640)*/
+@media screen and (max-width: 480px){
+
+}
+
+/*Giao diện Iphone(480 x 640)*/
+@media screen and (max-width: 320px){
+
+}
+
+/*Giao điện smartphone thường*/
+@media screen and (max-width: 240px){
+
+}
