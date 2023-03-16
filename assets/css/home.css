@@ -237,6 +237,73 @@ a {
     display: none;
 }
 
+.tray-content {
+    overflow: hidden;
+    position: relative;
+}
+
+.tray-item {
+    background: #ccc;
+    float: left;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 220px;
+    width: 390px;
+}
+
+.tray-item-thumbnail {
+    transition: transform .3s;
+    width: 100%;
+}
+
+.tray-item-description {
+    background: 0 0;
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,0),rgba(0,0,0,.39) 34%,#000 87%);
+    bottom: 0;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 50px 5px 5px;
+}
+
+.tray-item-title {
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 40%;
+    color: #eee;
+    font-size: 14px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tray-item-view {
+    display: block;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size:12px;
+    color: #eee;
+}
+
+.tray-episode-name {
+    background: hsla(0,0%,100%,.75);
+    border-radius: 3px;
+    color: #d60000;
+    left: 10px;
+    padding: 0 5px;
+    position: absolute;
+    top: 10px;
+}
+
 @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
@@ -257,6 +324,11 @@ a {
     .hidden-ipad {
         display: none;
     }
+
+    .tray-item:first-child {
+        height: 220px;
+        width: 385px;
+    }
 }
 
 /*Giao diện Ipad dọc (768 x 1024)*/
@@ -272,7 +344,9 @@ a {
 
 /*Giao diện Tablet (480 x 640)*/
 @media screen and (max-width: 480px){
-
+    .tray-item-title {
+        width: 100%;
+    }
 }
 
 /*Giao diện Iphone(480 x 640)*/
