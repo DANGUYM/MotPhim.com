@@ -1,7 +1,10 @@
 let slideIndex = 0;
+let theme = 0;
 showSlides();
 var user_data = document.getElementById('user-avatar');
 var remove_user = document.getElementById('remove-user');
+var navbar_user = document.getElementById('navbar-user');
+var change_theme = document.getElementById('change-theme');
 
 function showSlides(){
     let i;
@@ -21,16 +24,42 @@ function showSlides(){
 
 user_data.addEventListener('click', function() {
 
-    var x = document.getElementById("navbar-user");
-
-    if(x.style.width === "0px" || x.style.display === "none") {
-        x.style.width = "310px";
+    if(navbar_user.style.width === "0px" || navbar_user.style.display === "none") {
+        navbar_user.style.width = "310px";
     }else {
-        x.style.width = "0px";
+        navbar_user.style.width = "0px";
     }
 
 });
 
 remove_user.addEventListener('click', function() {
-    document.getElementById("navbar-user").style.width = "0px";
+    navbar_user.style.width = "0px";
 });
+
+function docFileCSS(filename) {
+    var link = document.createElement('link');
+    link.setAttribute('rel', 'stylesheet');
+    link.setAttribute('type', 'text/css');
+    link.setAttribute('href', filename);
+}
+
+change_theme.addEventListener('click', function() {
+     if(theme==0) {
+
+        document.getElementById("dark").setAttribute("href","assets/css/dark.css");
+        theme++;
+
+    }else {
+
+        document.getElementById("dark").setAttribute("href","");
+        theme--;
+
+    }
+});
+
+//Test
+window.onclick = function(event) {
+    if (event.target == navbar_user) {
+        navbar_user.style.width = "0px";
+    }
+}
