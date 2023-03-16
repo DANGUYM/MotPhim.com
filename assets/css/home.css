@@ -184,6 +184,10 @@ a {
     color:#f60000;
 }
 
+.tray-item-new:hover .tray-item-new-title {
+    color:#d60000;
+}
+
 .slideshow {
     max-width: 1000px;
     position: relative;
@@ -435,7 +439,6 @@ a {
         display: none;
     }
 
-
 }
 
 /*Giao diện Ipad dọc (768 x 1024)*/
@@ -469,6 +472,15 @@ a {
         border-radius: 5px;
         flex-shrink:0;
         overflow:hidden;
+    }
+
+    #film-today {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+
+    .tray-item {
+        width:48%;
     }
 
 }
