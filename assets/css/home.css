@@ -246,7 +246,7 @@ a {
 .tray-item-description {
 	height: 60px;
 	border-radius: 0px 0px 5px 5px;
-	margin: -74px 0px;
+	margin: -64px 0px;
     background-image: linear-gradient(271deg,hsla(0,0%,100%,0),rgba(0,0,0,.39) 34%,#000 87%);
     position: absolute;
     padding-right: 230px;
@@ -302,7 +302,6 @@ a {
 }
 
 #film-new {
-    height: 362px;
     display: block;
 }
 
