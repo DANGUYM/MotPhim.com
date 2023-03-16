@@ -450,6 +450,76 @@ a {
     margin-left:10px;
 }
 
+.navbar-user {
+    height: 100%;
+    background:white;
+    opacity: 90%;
+    right: 0px;
+    float: right;
+    -webkit-transition: width .3s,-webkit-box-shadow .3s;
+    transition: width .3s,-webkit-box-shadow .3s;
+    transition: width .3s,box-shadow .3s;
+    transition: width .3s,box-shadow .3s,-webkit-box-shadow .3s;
+    position: fixed;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0/0.1),0 1px 2px -1px rgb(0 0 0/0.1);
+    --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+    z-index: 69;
+    padding-top: 80px;
+}
+
+.navbar-user-name {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+.navbar-user-point {
+    font-family: system-ui;
+    font-size: 13px;
+    padding: 10px 25px;
+}
+
+.number-point {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar-user-avatar {
+    margin: 0px 35%;
+    max-width: 82px;
+    border: 3px solid #02cced;
+    border-radius: 60px;
+    padding: 3px;
+    height: 82px;
+}
+
+.user-item {
+    padding: 10px 25px;
+}
+
+.navbar-user hr {
+    color: #ccc;
+    width: 90%;
+    margin: auto;
+}
+
+.navbar-user-times {
+    position: absolute;
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.navbar-user-times .fa {
+    color:#d60000;
+}
+
+.navbar-user-times:hover .fa {
+    color: #f60000;
+}
+
 @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}

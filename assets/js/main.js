@@ -1,5 +1,7 @@
 let slideIndex = 0;
 showSlides();
+var user_data = document.getElementById('user-avatar');
+var remove_user = document.getElementById('remove-user');
 
 function showSlides(){
     let i;
@@ -17,3 +19,18 @@ function showSlides(){
 
 }
 
+user_data.addEventListener('click', function() {
+
+    var x = document.getElementById("navbar-user");
+
+    if(x.style.width === "0px" || x.style.display === "none") {
+        x.style.width = "310px";
+    }else {
+        x.style.width = "0px";
+    }
+
+});
+
+remove_user.addEventListener('click', function() {
+    document.getElementById("navbar-user").style.width = "0px";
+});
