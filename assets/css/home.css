@@ -423,6 +423,7 @@ a {
     display: block;
     width: 100%;
     border-radius: 15px;
+    padding-bottom: 20px;
 }
 
 .tray-title.has-background h5 {
