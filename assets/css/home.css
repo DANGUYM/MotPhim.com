@@ -167,22 +167,13 @@ a {
     text-transform: uppercase;
 }
 
-.tray-title .fa {
-    position: absolute;
-    border: 0;
-    font-size: 27px;
-    line-height: 46px;
-    margin-left: 11px;
-    color:#d60000;
-}
-
 .tray-title h5 {
     font-size: 20px;
-    font-weight: 400;
     height: 30px;
+    font-weight: bold;
     letter-spacing: 3px;
     line-height: 40px;
-    margin: 20px 10px 20px 45px;
+    margin: 20px 10px 20px 20px;
 }
 
 .tray-title a{
@@ -190,10 +181,6 @@ a {
 }
 
 .tray-title:hover a {
-    color:#f60000;
-}
-
-.tray-title:hover .fa{
     color:#f60000;
 }
 
@@ -240,6 +227,83 @@ a {
 .tray-content {
     overflow: hidden;
     position: relative;
+    margin:10px;
+}
+
+.tray-content-new-first {
+    width: 45%;
+    float: left;
+    height: 300px;
+    margin:0px 10px;
+}
+
+.tray-content-new-first img {
+    width: 100%;
+    border-radius:5px;
+    transition: transform .3s;
+}
+
+.tray-item-description {
+	height: 60px;
+	border-radius: 0px 0px 5px 5px;
+	margin: -74px 0px;
+    background-image: linear-gradient(271deg,hsla(0,0%,100%,0),rgba(0,0,0,.39) 34%,#000 87%);
+    position: absolute;
+    padding-right: 230px;
+}
+
+.tray-item-new-view {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+.tray-item-new-title {
+    font-size: 12px;
+    font-weight: bold;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: Ellipsis;
+}
+
+.tray-item-view {
+    color: #eee;
+    font-size:12px;
+    padding: 10px;
+    margin-bottom: -20px;
+}
+
+.tray-item-title {
+    color: #eee;
+    font-size: 16px;
+    padding:10px;
+}
+
+.tray-content-new-list {
+    width: 52%;
+	float:right;
+	display: flex;
+	overflow: hidden;
+	flex-wrap: wrap;
+	flex-direction: row;
+	height: 300px;
+}
+
+.tray-item-new {
+    width: 29%;
+    height: auto;
+    margin-right: 10px;
+    float: left;
+    border-radius: 5px;
+}
+
+.tray-item-new img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+#film-new {
+    height: 362px;
+    display: block;
 }
 
 .tray-item {
@@ -249,59 +313,106 @@ a {
     margin-right: 10px;
     overflow: hidden;
     position: relative;
-    height: 220px;
-    width: 390px;
+    width: 18%;
+}
+
+#film-today {
+    display: flex;
+    justify-content: space-around;
 }
 
 .tray-item-thumbnail {
+    height: 100%;
     transition: transform .3s;
     width: 100%;
 }
 
-.tray-item-description {
-    background: 0 0;
+.tray-item-today-description {
+    padding: 50px 5px 5px;
     background-image: linear-gradient(180deg,hsla(0,0%,100%,0),rgba(0,0,0,.39) 34%,#000 87%);
     bottom: 0;
+    color: #eee;
     height: auto;
     left: 0;
     position: absolute;
     right: 0;
     width: 100%;
     z-index: 1;
-    padding: 50px 5px 5px;
 }
 
-.tray-item-title {
-    display: block;
-    overflow: hidden;
-    text-align: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 40%;
+.tray-item-quality {
+    background: #d60000;
+    border-radius: 2px;
     color: #eee;
-    font-size: 14px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    font-size: 12px;
+    padding: 0 2px;
 }
 
-.tray-item-view {
-    display: block;
+.tray-item-today-title {
+    font-size: 16px;
+    max-height: 44px;
     overflow: hidden;
+    margin-bottom: 2px;
     text-align: left;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    font-size:12px;
-    color: #eee;
+    color:#eee;
 }
 
-.tray-episode-name {
-    background: hsla(0,0%,100%,.75);
+.tray-film-views {
+    bottom: 5px;
+    left: 5px;
+    font-size: 12px;
+    color:#eee;
+}
+
+.tray-film-episodes {
+    bottom: 5px;
+    position: absolute;
+    font-size: 12px;
+    color: #eee;
+    right: 15px;
+}
+
+.tray-item-audio {
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 3px;
     color: #d60000;
     left: 10px;
     padding: 0 5px;
     position: absolute;
     top: 10px;
+    display: block;
+}
+
+.tray-item:hover .tray-item-thumbnail {
+    transform: scale(1.2);
+}
+
+.tray-item:hover .tray-item-audio {
+    display: none;
+}
+
+.tray-item:hover .tray-item-play-button {
+    display:block;
+}
+
+.tray-item-play-button {
+    top:10px;
+    left:10px;
+    position: absolute;
+    display: none;
+    background: rgba(0,0,0,.6);
+    border-radius: 100%;
+    transition: opacity .3s,display .3s;
+    box-shadow: 0 0 10px #fff;
+    height: 60px;
+    width: 60px;
+}
+
+.tray-item-play-button .fa {
+    color:#fff;
+    font-size: 30px;
+    line-height: 60px;
+    padding-left:20px;
 }
 
 @keyframes fade {
@@ -315,7 +426,7 @@ a {
         width: 1310px;
     }
     .container {
-        width: 990px;
+        width: 1090px;
     }
 }
 
@@ -325,10 +436,7 @@ a {
         display: none;
     }
 
-    .tray-item:first-child {
-        height: 220px;
-        width: 385px;
-    }
+
 }
 
 /*Giao diện Ipad dọc (768 x 1024)*/
@@ -340,13 +448,37 @@ a {
     .slideshow {
         display: none;
     }
+
+    .tray-content-new-list {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+        height: 200px;
+        flex-wrap:unset;
+    }
+
+    .tray-content-new-first {
+        width:96%;
+        height:auto;
+    }
+
+    .tray-item-new {
+        width: 200px;
+        height:auto;
+        margin: 15px 10px 10px 11px;
+        float: left;
+        border-radius: 5px;
+        flex-shrink:0;
+        overflow:hidden;
+    }
+
 }
 
 /*Giao diện Tablet (480 x 640)*/
 @media screen and (max-width: 480px){
-    .tray-item-title {
-        width: 100%;
-    }
+
+
+
 }
 
 /*Giao diện Iphone(480 x 640)*/
