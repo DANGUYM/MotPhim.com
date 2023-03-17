@@ -529,6 +529,83 @@ a {
     color:#d60000;
 }
 
+.tray-content-ranking {
+    display: flex;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.tray-content-ranking::-webkit-scrollbar {
+    display:none;
+}
+
+.tray-ranking-item {
+    width: 202px;
+    height: auto;
+    margin-left: 2%;
+    float: left;
+    flex-shrink: 0;
+    overflow: hidden;
+    position: relative;
+    margin: 10px 20px 20px;
+}
+
+.raking-item-thumbnail {
+    width: 130px;
+    height: 172px;
+    float: right;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.raking-item-thumbnail img {
+    width: 100%;
+    transition: 0.6s;
+}
+
+.tray-ranking-item:hover img {
+    transform: scale(1.2);
+}
+
+.ranking-item-top {
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 200px;
+    line-height: 159px;
+    font-weight: 800;
+    z-index: -1;
+    -webkit-text-fill-color: white;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #d60000;
+    font-family: Arial;
+}
+
+.tray-item-left {
+    position: absolute;
+    font-size: 25px;
+    right: 0;
+    top: 0;
+    margin: 10px;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+.tray-item-right {
+    position: absolute;
+    font-size: 25px;
+    right: 0;
+    top: 0;
+    margin: 10px;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.tray-item-left:hover .fa, .tray-item-right:hover .fa {
+    color: #d60000;
+}
+
 @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
@@ -592,10 +669,12 @@ a {
         flex-direction: row;
     }
 
-    #
-
     .tray-item {
         width:48%;
+    }
+
+    .collection-item {
+        width: 48%;
     }
 
 }

@@ -6,6 +6,10 @@ var remove_user = document.getElementById('remove-user');
 var navbar_user = document.getElementById('navbar-user');
 var change_theme = document.getElementById('change-theme');
 
+document.cookie = "loginCookie=KhangDora; max-age=" + 60 * 60 * 24 * 7;
+
+var loginCookie = document.cookie.split(';').find(cookie => cookie.includes('loginCookie='));
+
 function showSlides(){
     let i;
     let slides = document.getElementsByClassName("slideshow-items");
@@ -31,6 +35,11 @@ user_data.addEventListener('click', function() {
     }
 
 });
+
+if(loginCookie) {
+    var cookieValue = myCookie.split('=')[1];
+    var user_name = document.getElementsByClassName("navbar-user-name").innnerHTML(cookieValue);
+}
 
 remove_user.addEventListener('click', function() {
     navbar_user.style.width = "0px";
