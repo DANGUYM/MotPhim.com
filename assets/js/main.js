@@ -72,3 +72,16 @@ window.onclick = function(event) {
         navbar_user.style.width = "0px";
     }
 }
+
+//Prev - Next
+$('#left1').on('click', function() {
+    $('.content-ranking').animate({
+      scrollLeft: '-=400'
+    }, 300, 'swing');
+});
+
+$('#right1').on('click', function() {
+    $('.content-ranking').animate({
+      scrollRight: '-=400'
+    }, 300, 'swing');
+  });
