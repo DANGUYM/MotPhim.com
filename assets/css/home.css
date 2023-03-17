@@ -6,6 +6,7 @@
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 1.428571429;
+    transition: 0.3s;
 }
 
 input {
