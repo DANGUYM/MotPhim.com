@@ -66,22 +66,14 @@ change_theme.addEventListener('click', function() {
     }
 });
 
-//Test
-window.onclick = function(event) {
-    if (event.target == navbar_user) {
-        navbar_user.style.width = "0px";
-    }
-}
-
-//Prev - Next
 $('#left1').on('click', function() {
-    $('.content-ranking').animate({
+    $('.tray-content-ranking').animate({
       scrollLeft: '-=400'
     }, 300, 'swing');
-});
-
+ });
+  
 $('#right1').on('click', function() {
-    $('.content-ranking').animate({
-      scrollRight: '-=400'
+    $('.tray-content-ranking').animate({
+      scrollLeft: '+=400'
     }, 300, 'swing');
-  });
+});

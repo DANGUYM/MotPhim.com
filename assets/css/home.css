@@ -671,11 +671,11 @@ a {
     }
 
     .tray-item {
-        width:48%;
+        width:47%;
     }
 
     .collection-item {
-        width: 48%;
+        width: 47%;
     }
 
 }
@@ -683,16 +683,24 @@ a {
 /*Giao diện Tablet (480 x 640)*/
 @media screen and (max-width: 480px){
 
+    .tray-item {
+        width:98%;
+    }
 
+    .collection-item {
+        width: 98%;
+    }
 
 }
 
 /*Giao diện Iphone(480 x 640)*/
 @media screen and (max-width: 320px){
 
+
 }
 
 /*Giao điện smartphone thường*/
 @media screen and (max-width: 240px){
+
 
 }

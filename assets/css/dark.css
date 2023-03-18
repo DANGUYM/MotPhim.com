@@ -30,7 +30,8 @@ body {
 }
 
 .search-box input {
-    background-color: rgba(0, 0, 0, 0.13);
+    background-color: #dadada;
+    color: #333;
 }
 
 .ranking-item-top {
