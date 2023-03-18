@@ -2,19 +2,22 @@
 function orther(number) {
     if(number == 1) {
 
-        //Tất cả js của pages thể loại
-        alert("Đã oke");
+        var category = document.getElementById('category');
+        category.addEventListener('click', function() {
+            if(document.getElementById('list-category').style.display == "none") 
+                document.getElementById('list-category').style.display = "grid";
+            else 
+                document.getElementById('list-category').style.display = "none";
+        })
 
-        $.post("../data/category.json", function(data){
-
-            alert("Đã oke");
-
-            var data = JSON.parse(data);
-            var list = $('<li class="dropdown-category-items">');
-
-            alert(data.length);
-
-        });
+        $.getJSON("https://cors-anywhere.herokuapp.com/https://motphimz.000webhostapp.com/assets/js/category.json", function(data){
+            var items = [];
+            $.each(data, function(key, val){
+              items.push('<li class="dropdown-category-items">' +
+              '<input name="category[]" value="' + val.id + '" type="checkbox" data-cate="'+ val.id + '"><label>' + val.category + '</label></li>');
+            });
+            $("#list-category").append(items.join(""));
+          });
 
 
     }
