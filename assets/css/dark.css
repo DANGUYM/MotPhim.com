@@ -49,3 +49,11 @@ body {
 .header-search .fa {
     color: #333;
 }
+
+.preview-content {
+    background-color: black;
+}
+
+.player-type {
+    color:white;
+}
