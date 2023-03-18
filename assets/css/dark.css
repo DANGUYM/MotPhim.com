@@ -10,6 +10,15 @@ body {
     color:#bbb;
 }
 
+*::-webkit-scrollbar {
+    width: 8px;
+    background-color: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #808080;
+}
+
 .header {
     background-color: #333;
     box-shadow: 0 0 1px 0 #adadad;
@@ -51,7 +60,8 @@ body {
 }
 
 .preview-content {
-    background-color: black;
+    background-color: #1a1a1a;
+    border: 1px solid #2e2e2e;
 }
 
 .player-type {

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>MotPhim.Com - Trang web xem phim số một tại Việt Nam</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+
+	<meta name="robots" content="index, follow" />
+	<meta name="language" content="Vietnamese" />
+
+    <link rel="shortcut icon" href="assets/img/ico.png" type="image/x-icon" />
+
+	<meta name="description" content="Trang xem phim số một Việt Nam, phim mới và phim sớm" />
+	<meta name="keywords" content="phim trung quoc, phim han quoc, phim ngon tinh, anime, vietsub, phim chieu rap" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/home.css"/>
+    <link rel="stylesheet" id="dark"/>
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-img">
+                <a href="./index.html"><img src="assets/img/logo_white.png" alt="Logo chính thức"></a>
+            </div>
+            <div class="header-menu">
+                <div class="header-menu-items">
+                    <a href="./the-loai.html">Thể loại</a>
+                </div>
+                <div class="header-menu-items">
+                    <a href="./phim-le.html">Phim lẻ</a>
+                </div>
+                <div class="header-menu-items">
+                    <a href="./phim-bo.html">Phim bộ</a>
+                </div>
+                <div class="header-menu-items hidden-ipad">
+                    <a href="./phim-chieu-rap.html">Phim chiếu rạp</a>
+                </div>
+                <div class="header-menu-items hidden-ipad">
+                    <a href="./bang-xep-hang.html">Bảng xếp hạng</a>
+                </div>
+                <div class="header-search hidden-ipad">
+                    <div class="search-box">
+                        <form action="./tim-kiem.html">
+                            <input type="text" name="q" placeholder="Tìm kiếm" autocomplete="off">
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="header-user">
+                <div class="user-login user-avatar" id="user-avatar">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="user-login user-avatar" id="change-theme">
+                    <i class="fa fa-sun-o"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="navbar-user" id="navbar-user" style="width: 0px;">
+        <div class="profile">
+            <img class="navbar-user-avatar" src="https://i.imgur.com/XXIC7OL.jpg"/>
+            <div class="navbar-user-name">Kamic</div>
+            <div class="navbar-user-point">Số điểm thưởng<p class="number-point">10.000 KIM CƯƠNG</p></div>
+            <div class="navbar-user-times" id="remove-user"><i class="fa fa-times"></i></div>
+        </div>
+        <hr>
+        <div class="user-item">
+            <a href="./thong-tin-tai-khoan.html">
+                <i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Thông tin tài khoản
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./cai-dat-tai-khoan.html">
+                <i class="fa fa-cog"></i>&nbsp;&nbsp;Cài đặt tài khoản
+            </a>
+        </div>
+        <hr>
+        <div class="user-item">
+            <a href="./phim-da-xem.html">
+                <i class="fa fa-history"></i>&nbsp;&nbsp;Phim đã xem
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./phim-da-thich.html">
+                <i class="fa fa-heart-o"></i>&nbsp;&nbsp;Phim đã thích
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./phim-dang-theo-doi.html">
+                <i class="fa fa-bell-o"></i>&nbsp;&nbsp;Phim đang theo dõi
+            </a>
+        </div>
+        <hr>
+        <div class="user-item">
+            <a href="./nap-diem-thuong.html">
+                <i class="fa fa-money"></i>&nbsp;&nbsp;Nạp điểm thưởng
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./nang-cap-tai-khoan.html">
+                <i class="fa fa-ticket"></i>&nbsp;&nbsp;Nâng cấp tài khoản
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./nang-cap-tai-khoan.html">
+                <i class="fa fa-list"></i>&nbsp;&nbsp;Lịch sử giao dịch
+            </a>
+        </div>
+        <hr>
+        <div class="user-item">
+            <a href="./dang-xuat.html">
+                <i class="fa fa-sign-out"></i>&nbsp;&nbsp;Đăng xuất
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <selection class="tray">
+            <div class="tray-title">
+                <h5>
+                    <a>🎬 Tìm kiếm: <span id="result-search"></span></a>
+                </h5>
+            </div>
+
+            <div class="tray-content" id="film-today">
+
+                <div class="tray-item">
+                    <a href="./tokyo-revengers/tap-24">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film8.jpg" alt="Tokyo 卍 Revengers">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Tokyo 卍 Revengers</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">3.182.192 xem</div>
+                                <div class="tray-film-episodes">24 / 24 tập</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Vietsub</div>
+                    </a>
+                </div>
+                
+                <div class="tray-item">
+                    <a href="./doraemon/tap-746">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film9.jpg" alt="Doraemon">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Doraemon</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">47.812.318 xem</div>
+                                <div class="tray-film-episodes">746 / ?? tập</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Tiếng Việt & Vietsub</div>
+                    </a>
+                </div>
+
+                <div class="tray-item">
+                    <a href="./ke-doc-hanh">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film10.jpg" alt="Kẻ độc hành">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Kẻ độc hành</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">4.737.829 xem</div>
+                                <div class="tray-film-episodes">Full</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Tiếng Việt</div>
+                    </a>
+                </div>
+
+                <div class="tray-item">
+                    <a href="./bungou-stray-dogs/tap-50">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film11.jpg" alt="Bungou Stray Dogs">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">HD</span>
+                            <div class="tray-item-today-title">Bungou Stray Dogs</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">48.281 xem</div>
+                                <div class="tray-film-episodes">50 / 50 tập</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Vietsub</div>
+                    </a>
+                </div>
+
+                <div class="tray-item">
+                    <a href="./chi-chi-em-em-2">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film12.jpg" alt="Chị chị em em 2">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Chị chị em em 2</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">21.929 xem</div>
+                                <div class="tray-film-episodes">Full</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Tiếng Việt & Engsub</div>
+                    </a>
+                </div>
+
+                <div class="tray-item unhidden-phone">
+                    <a href="./dan-choi-khong-so-con-roi">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film13.jpg" alt="Dân chơi không sợ con rơi">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Dân chơi không sợ con rơi</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">1.382.332 xem</div>
+                                <div class="tray-film-episodes">Full</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Tiếng Việt</div>
+                    </a>
+                </div>
+
+            </div>
+
+        </selection>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-top-container">
+                <div class="footer-top-content">
+                    <a class="footer-logo" href="./index.html">
+                        <img src="assets/img/logo_white.png" alt="Logo chính thức">
+                    </a>
+                    <a class="footer-logo" href="http://online.gov.vn/Home/WebDetails/58364?AspxAutoDetectCookieSupport=1" target="_blank">
+                        <img src="assets/img/logo-mit.png" alt="Logo MIT">
+                    </a>
+                    <a class="footer-logo" href="http://online.gov.vn/Home/WebDetails/58364?AspxAutoDetectCookieSupport=1" target="_blank">
+                        <img src="assets/img/lgod_mca.png" alt="Logo DMCA">
+                    </a>
+                </div>
+                <div class="footer-top-content" id="quydinh">
+                    <div class="vertical">
+                        <div class="footer-title color-ccc">Quy định</div>
+                        <a href="./dieu-khoan-su-dung.html" class="color-ccc">Điều khoản sử dụng</a>
+                        <a href="./chinh-sach-rieng-tu.html"  class="color-ccc">Chính sách riêng tư</a>
+                        <a href="./chinh-sach-quyen-so-huu-tri-tue.html"  class="color-ccc">Chính sách quyền sở hữu trí tuệ</a>
+                        <a href="./chinh-sach-khac.html"  class="color-ccc">Chính sách khác</a>
+                    </div>
+                    <div class="vertical">
+                        <div class="footer-title color-ccc">Hỗ trợ</div>
+                        <a href="./help-center.html" class="color-ccc">Trung tâm hỗ trợ</a>
+                        <a href="./cau-hoi-thuong-gap.html"  class="color-ccc">Câu hỏi thường gặp</a>
+                        <a href="./lien-he.html"  class="color-ccc">Liên hệ</a>
+                        <a href=""  class="color-ccc" target="_blank">Góp ý</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-top-container">
+                <div class="footer-top-content color-ccc" id="company">
+                    Trường ĐH Công nghiệp Tp. Hồ Chí Minh - Địa chỉ: 12 Nguyễn Văn Bảo, Phường IV, Quận Gò Vấp, Thành phố Hồ Chí Minh.<br>
+                    Email: 123@gmail.com<br>
+                    Giấy phép Cung cấp Dịch vụ Phát thanh, Truyền hình trả tiền số 192/GP_BTTTT cấp ngày 07/05/2020.
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script type="text/javascript" src="assets/js/session.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/search.js"></script>
+
+</body>
+</html>

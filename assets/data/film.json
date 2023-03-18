@@ -1,0 +1,33 @@
+[{
+    "id":"0001",
+    "title":"Chị chị em em 2",
+    "img":"film1.jpg",
+    "img2":"film12.jpg",
+    "lang":"Tiếng Việt",
+    "views":"21929",
+    "ismovie":true,
+    "episodes":115,
+    "type":4
+},
+{
+    "id":"0002",
+    "title":"Tokyo 卍 Revengers",
+    "img":"film28.jpg",
+    "img2":"film29.jpg",
+    "lang":"Tiếng Nhật",
+    "views":"278392",
+    "ismovie":false,
+    "episodes":47,
+    "type":1
+},
+{
+    "id":"0003",
+    "title":"Majutsushi Orphen Hagure Tabi",
+    "img":"film30.jpg",
+    "img2":"film31.jpg",
+    "lang":"Tiếng Nhật",
+    "views":"2810283",
+    "ismovie":false,
+    "episodes":36,
+    "type":1
+}]
