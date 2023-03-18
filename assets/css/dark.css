@@ -37,3 +37,15 @@ body {
 .ranking-item-top {
     -webkit-text-fill-color: black;
 }
+
+.title-news {
+    background-color: #212121;
+}
+
+.tray-content-news{
+    background-color: #064050;
+}
+
+.header-search .fa {
+    color: #333;
+}

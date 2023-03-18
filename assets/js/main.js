@@ -68,12 +68,12 @@ change_theme.addEventListener('click', function() {
 
 $('#left1').on('click', function() {
     $('.tray-content-ranking').animate({
-      scrollLeft: '-=400'
+      scrollLeft: '-=500'
     }, 300, 'swing');
- });
+  });
   
 $('#right1').on('click', function() {
     $('.tray-content-ranking').animate({
-      scrollLeft: '+=400'
+      scrollLeft: '+=500'
     }, 300, 'swing');
 });

@@ -20,6 +20,9 @@
 	<meta name="keywords" content="phim trung quoc, phim han quoc, phim ngon tinh, anime, vietsub, phim chieu rap" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
     <link rel="stylesheet" href="assets/css/home.css"/>
     <link rel="stylesheet" id="dark"/>
 
@@ -128,35 +131,55 @@
             <div class="slideshow-container">
 
                 <div class="slideshow-items slideshow-animation">
-                    <img src="assets/img/slideshow/slide1.jpg">
-                    <div class="slideshow-info">
-                        <div class="slideshow-info-view">873.382 lượt xem</div>
-                        <div class="slideshow-info-title">Bungou Stray Dogs</div>
-                    </div>
+                    <a href="./bungou-stray-dogs/tap-1">
+                        <img src="assets/img/slideshow/slide1.jpg">
+                        <div class="slideshow-info">
+                            <div class="slideshow-info-view">873.382 lượt xem</div>
+                            <div class="slideshow-info-title">Bungou Stray Dogs</div>
+                        </div>
+                        <div class="slideshow-icon-play">
+                            <i class="fa fa-play"></i>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="slideshow-items slideshow-animation">
-                    <img src="assets/img/slideshow/slide2.jpg">
-                    <div class="slideshow-info">
-                        <div class="slideshow-info-view">3.345.469 lượt xem</div>
-                        <div class="slideshow-info-title">Tensei Oujo to Tensai Reijou no Mahou Kakumei</div>
-                    </div>
+                    <a href="./tensei-oujo-to-tensai-reijou-no-mahou-kakumei/tap-1">
+                        <img src="assets/img/slideshow/slide2.jpg">
+                        <div class="slideshow-info">
+                            <div class="slideshow-info-view">3.345.469 lượt xem</div>
+                            <div class="slideshow-info-title">Tensei Oujo to Tensai Reijou no Mahou Kakumei</div>
+                        </div>
+                        <div class="slideshow-icon-play">
+                            <i class="fa fa-play"></i>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="slideshow-items slideshow-animation">
-                    <img src="assets/img/slideshow/slide3.jpg">
-                    <div class="slideshow-info">
-                        <div class="slideshow-info-view">283.328 lượt xem</div>
-                        <div class="slideshow-info-title">Majutsushi Orphen Hagure Tabi</div>
-                    </div>
+                    <a href="./majutsushi-orphen-hagure-tabi/tap-1">
+                        <img src="assets/img/slideshow/slide3.jpg">
+                        <div class="slideshow-info">
+                            <div class="slideshow-info-view">283.328 lượt xem</div>
+                            <div class="slideshow-info-title">Majutsushi Orphen Hagure Tabi</div>
+                        </div>
+                        <div class="slideshow-icon-play">
+                            <i class="fa fa-play"></i>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="slideshow-items slideshow-animation">
-                    <img src="assets/img/slideshow/slide4.jpg">
-                    <div class="slideshow-info">
-                        <div class="slideshow-info-view">1.372.203 lượt xem</div>
-                        <div class="slideshow-info-title">Tokyo 卍 Revengers</div>
-                    </div>
+                    <a href="./tokyo-revengers/tap-1">
+                        <img src="assets/img/slideshow/slide4.jpg">
+                        <div class="slideshow-info">
+                            <div class="slideshow-info-view">1.372.203 lượt xem</div>
+                            <div class="slideshow-info-title">Tokyo 卍 Revengers</div>
+                        </div>
+                        <div class="slideshow-icon-play">
+                            <i class="fa fa-play"></i>
+                        </div>
+                    </a>
                 </div>
 
             </div>
@@ -473,15 +496,249 @@
                     </a>
                 </div>
 
+                <div class="tray-ranking-item">
+                    <a href="./dan-choi-khong-so-con-roi">
+                        <div class="raking-item-thumbnail">
+                            <img src="assets/img/film/film13.jpg" alt="Dân chơi không sợ con rơi" />
+                        </div>
+                        <div class="ranking-item-top">6</div>
+                    </a>
+                </div>
+
+                <div class="tray-ranking-item">
+                    <a href="./one-piece-film-red">
+                        <div class="raking-item-thumbnail">
+                            <img src="assets/img/film/film16.jpg" alt="One Piece Film: Red" />
+                        </div>
+                        <div class="ranking-item-top">7</div>
+                    </a>
+                </div>
+
+                <div class="tray-ranking-item">
+                    <a href="./lat-mat-48h">
+                        <div class="raking-item-thumbnail">
+                            <img src="assets/img/film/film17.jpg" alt="Lật mặt: 48h" />
+                        </div>
+                        <div class="ranking-item-top">8</div>
+                    </a>
+                </div>
+
+                <div class="tray-ranking-item">
+                    <a href="./naruto-shippuuden/tap-500">
+                        <div class="raking-item-thumbnail">
+                            <img src="assets/img/film/film18.jpg" alt="Naruto Shippuuden" />
+                        </div>
+                        <div class="ranking-item-top">9</div>
+                    </a>
+                </div>
+
+            </div>
+
+        </selection>
+
+        <selection class="tray" id="news-showbiz">
+
+            <div class="tray-title has-background">
+                <h5>
+                    <a href="./tin-dien-anh">Tin điện ảnh</a>
+                </h5>
+            </div>            
+            <div class="tray-content-news">
+
+                <div class="tray-item-news">
+                    <a href="https://moveek.com/bai-viet/biet-doi-rat-on-tung-bo-poster-nhan-vat-la-mat/31724" target="_blank">
+                        <img class="w-full" src="assets/img/news/0001.jpeg">
+                        <div class="title-news"><p>"Biệt đội rất ổn" tung bộ poster nhân vật lạ mắt</p></div>
+                    </a>
+                </div>
+
+                <div class="tray-item-news">
+                    <a href="https://moveek.com/bai-viet/the-first-slam-dunk-khoi-chieu-tai-rap-viet/31707" target="_blank">
+                        <img class="w-full" src="assets/img/news/0002.jpg">
+                        <div class="title-news"><p>The First Slam Dunk khởi chiếu tại rạp Việt</p></div>
+                    </a>
+                </div>
+
+                <div class="tray-item-news">
+                    <a href="https://moveek.com/bai-viet/oscar-vs-cannes-lhp-su-lua-chon-giua-danh-tieng-va-danh-gia/31688" target="_blank">
+                        <img class="w-full" src="assets/img/news/0003.jpg">
+                        <div class="title-news"><p>Oscar vs Cannes (LHP) - Sự lựa chọn giữa danh tiếng và danh giá</p></div>
+                    </a>
+                </div>
+
+                <div class="tray-item-news">
+                    <a href="https://moveek.com/bai-viet/thanh-guom-diet-quy-duong-den-lang-ren-guom-nhung-dai-tru-va-quy-thuong-huyen-ban-can-luu-y/31675" target="_blank">
+                        <img class="w-full" src="assets/img/news/0004.jpg">
+                        <div class="title-news"><p>Thanh Gươm Diệt Quỷ: Đường Đến Làng Rèn Gươm - Những đại trụ và quỷ thượng huyền bạn cần lưu ý</p></div>
+                    </a>
+                </div>
+
+                <div class="tray-item-news">
+                    <a href="https://moveek.com/bai-viet/everything-everywhere-all-at-once-cung-nhung-bai-hoc-dang-suy-ngam/31700" target="_blank">
+                        <img class="w-full" src="assets/img/news/0005.jpg">
+                        <div class="title-news"><p>Everything Everywhere All At Once cùng những bài học đáng suy ngẫm</p></div>
+                    </a>
+                </div>
+
+            </div>
+        </selection>
+
+        <selection class="tray">
+            <div class="tray-title">
+                <h5>
+                    <a href="./hom-nay-xem-gi">🎬 Phim chiếu rạp</a>
+                </h5>
+            </div>
+
+            <div class="tray-content" id="film-today">
+
+                <div class="tray-item">
+                    <a href="./one-piece-film-red">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film16.jpg" alt="One Piece Film: Red">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">One Piece Film: Red</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">239.283 xem</div>
+                                <div class="tray-film-episodes">181 phút</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Nhật Bản</div>
+                    </a>
+                </div>
+                
+                <div class="tray-item">
+                    <a href="./lat-mat-48h">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film17.jpg" alt="Lật mặt 48h">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Lật mặt 48h</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">1.230.281 xem</div>
+                                <div class="tray-film-episodes">110 phút</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Việt Nam</div>
+                    </a>
+                </div>
+
+                <div class="tray-item unhidden-phone">
+                    <a href="./dan-choi-khong-so-con-roi">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film13.jpg" alt="Dân chơi không sợ con rơi">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Dân chơi không sợ con rơi</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">1.382.332 xem</div>
+                                <div class="tray-film-episodes">Full</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Việt Nam</div>
+                    </a>
+                </div>
+
+                <div class="tray-item">
+                    <a href="./avengers-endgame">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film19.jpg" alt="Avengers: Endgame">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">HD</span>
+                            <div class="tray-item-today-title">Avengers: Endgame</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">13.483.812 xem</div>
+                                <div class="tray-film-episodes">181 phút</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Hoa Kỳ</div>
+                    </a>
+                </div>
+
+                <div class="tray-item">
+                    <a href="./chi-chi-em-em-2">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film12.jpg" alt="Chị chị em em 2">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Chị chị em em 2</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">21.929 xem</div>
+                                <div class="tray-film-episodes">Full</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Việt Nam</div>
+                    </a>
+                </div>
+
+                <div class="tray-item unhidden-phone">
+                    <a href="./muon-gap-anh">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film20.jpg" alt="Muốn gặp anh">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Muốn gặp anh</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">133.652 xem</div>
+                                <div class="tray-film-episodes">107 phút</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Đài Loan</div>
+                    </a>
+                </div>
+
             </div>
 
         </selection>
 
     </div>
 
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-top-container">
+                <div class="footer-top-content">
+                    <a class="footer-logo" href="./">
+                        <img src="assets/img/logo_white.png" alt="Logo chính thức">
+                    </a>
+                    <a class="footer-logo" href="http://online.gov.vn/Home/WebDetails/58364?AspxAutoDetectCookieSupport=1" target="_blank">
+                        <img src="assets/img/logo-mit.png" alt="Logo MIT">
+                    </a>
+                    <a class="footer-logo" href="http://online.gov.vn/Home/WebDetails/58364?AspxAutoDetectCookieSupport=1" target="_blank">
+                        <img src="assets/img/lgod_mca.png" alt="Logo DMCA">
+                    </a>
+                </div>
+                <div class="footer-top-content" id="quydinh">
+                    <div class="vertical">
+                        <div class="footer-title color-ccc">Quy định</div>
+                        <a href="./dieu-khoan-su-dung" class="color-ccc">Điều khoản sử dụng</a>
+                        <a href="./chinh-sach-rieng-tu"  class="color-ccc">Chính sách riêng tư</a>
+                        <a href="./chinh-sach-quyen-so-huu-tri-tue"  class="color-ccc">Chính sách quyền sở hữu trí tuệ</a>
+                        <a href="./chinh-sach-khac"  class="color-ccc">Chính sách khác</a>
+                    </div>
+                    <div class="vertical">
+                        <div class="footer-title color-ccc">Hỗ trợ</div>
+                        <a href="./help-center" class="color-ccc">Trung tâm hỗ trợ</a>
+                        <a href="./cau-hoi-thuong-gap"  class="color-ccc">Câu hỏi thường gặp</a>
+                        <a href="./lien-he"  class="color-ccc">Liên hệ</a>
+                        <a href=""  class="color-ccc" target="_blank">Góp ý</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-top-container">
+                <div class="footer-top-content color-ccc" id="company">
+                    Trường ĐH Công nghiệp Tp. Hồ Chí Minh - Địa chỉ: 12 Nguyễn Văn Bảo, Phường IV, Quận Gò Vấp, Thành phố Hồ Chí Minh.<br>
+                    Email: 123@gmail.com<br>
+                    Giấy phép Cung cấp Dịch vụ Phát thanh, Truyền hình trả tiền số 192/GP_BTTTT cấp ngày 07/05/2020.
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
     <script type="text/javascript" src="assets/js/session.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/home.js"></script>
 
 </body>
 </html>
