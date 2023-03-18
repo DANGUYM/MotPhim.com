@@ -1,0 +1,37 @@
+[{
+    "id":1,
+    "category":"Hành động"
+}, {
+    "id":2,
+    "category":"Phiêu lưu"
+}, {
+    "id":3,
+    "category":"Hài hước"
+}, {
+    "id":4,
+    "category":"Đời thường"
+}, {
+    "id":5,
+    "category":"Lãng mạn"
+}, {
+    "id":6,
+    "category":"Khoa học - Viễn tưởng"
+}, {
+    "id":7,
+    "category":"Kinh dị"
+}, {
+    "id":8,
+    "category":"Siêu nhiên"
+}, {
+    "id":9,
+    "category":"Giả tưởng"
+}, {
+    "id":10,
+    "category":"Chính kịch"
+}, {
+    "id":11,
+    "category":"Thể thao"
+}, {
+    "id":12,
+    "category":"Võ thuật"
+}]

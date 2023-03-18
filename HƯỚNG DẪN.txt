@@ -1,0 +1,13 @@
+//CÁC CÀI ĐẶT BẮT BUỘC ĐỂ TRÌNH DUYỆT CHẠY MƯỢT MÀ VỚI NHỮNG CHỨC NĂNG NÂNG CAO
+
+Cài đặt Node.js vào biến môi trường của hệ thống để website được thực thi đúng các lệnh js.
+(Cụ thể để thực hiện $Post, lưu thông tin người dùng vào file dữ liệu info.json, lấy thông tin các tài khoản, danh sách phim, danh sách vide,...)
+
+Cho phép trình duyệt Chrome truy cập và đọc file trong hệ thống.
+B1: Mở trình duyệt Chrome.
+B2: Nhập đường dẫn chrome://flags/ vào thanh địa chỉ và nhấn Enter.
+B3: Tìm kiếm "Experimental Web Platform features".
+B4: Chọn "Enabled" từ menu thả xuống.
+B5: Nhấn "Relaunch Now" để khởi động lại trình duyệt.
+
+
