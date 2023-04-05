@@ -34,7 +34,20 @@ function orther(number) {
             $("#list-category").append(items.join(""));
           });
 
+        document.body.addEventListener('click', function(e){
+            if(e.target.id != 'list-category' && e.target.id != 'category') 
+                document.getElementById('list-category').style.display = "none";
 
+            if(e.target.id != 'list-status' && e.target.id != 'status') 
+                document.getElementById('list-status').style.display = "none";
+
+            if(e.target.id != 'list-movie' && e.target.id != 'movie') 
+                document.getElementById('list-movie').style.display = "none";
+
+            if(e.target.id != 'list-sort' && e.target.id != 'sort') 
+                document.getElementById('list-sort').style.display = "none";
+        })
+        
     }
 
     if(number == 2) {

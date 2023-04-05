@@ -455,12 +455,9 @@ a {
     margin-left:10px;
 }
 
-.navbar-user {
+.navbar-user, .navbar-menu {
     height: 100%;
-    background:white;
-    opacity: 90%;
-    right: 0px;
-    float: right;
+    background:#ffffffd1;
     -webkit-transition: width .3s,-webkit-box-shadow .3s;
     transition: width .3s,-webkit-box-shadow .3s;
     transition: width .3s,box-shadow .3s;
@@ -470,6 +467,25 @@ a {
     --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
     z-index: 69;
     padding-top: 80px;
+    width: 300px;
+}
+
+.navbar-user {
+    float: right;
+    right: 0px;
+}
+
+.navbar-menu {
+    float: left;
+    left:0px;
+}
+
+.navbar-menu .search-box {
+    margin: 10px 20px;
+}
+
+.navbar-menu input {
+    width: 80%;
 }
 
 .navbar-user-name {
@@ -498,8 +514,12 @@ a {
     height: 82px;
 }
 
-.user-item {
+.user-item, .menu-item {
     padding: 10px 25px;
+}
+
+.menu-item {
+    text-transform: uppercase;
 }
 
 .navbar-user hr {
@@ -508,8 +528,15 @@ a {
     margin: auto;
 }
 
-.navbar-user-times {
+.navbar-menu-times {
     position: absolute;
+    top: 80px;
+    right: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.navbar-user-times {
     position: absolute;
     top: 80px;
     left: 20px;
@@ -517,19 +544,19 @@ a {
     cursor: pointer;
 }
 
-.navbar-user-times .fa {
+.navbar-user-times .fa, .navbar-menu-times .fa {
     color:#d60000;
 }
 
-.navbar-user-times:hover .fa {
+.navbar-user-times:hover .fa, .navbar-menu-times:hover .fa {
     color: #f60000;
 }
 
-.user-item a:hover {
+.user-item a:hover, .menu-item a:hover {
     color:#d60000;
 }
 
-.user-item a:hover .fa {
+.user-item a:hover .fa, .menu-item a:hover .fa  {
     color:#d60000;
 }
 
