@@ -307,7 +307,7 @@ a {
     border-radius: 5px;
 }
 
-#film-new {
+#film-new, .trailer {
     display: block;
 }
 
