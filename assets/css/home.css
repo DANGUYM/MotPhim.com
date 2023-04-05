@@ -1117,6 +1117,19 @@ a {
     display: none;
 }
 
+.user-item.admin {
+    display: none;
+    color: #d60000;
+}
+
+.user-item.admin a {
+    color: #d60000;
+}
+
+.user-item.admin .fa {
+    color: #d60000;
+}
+
 /* Cài đặt animation */
 
 @keyframes zoom-in-zoom-out {

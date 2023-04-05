@@ -15,10 +15,56 @@ var change_theme = document.getElementById('change-theme');
 // tài khoản 2 uservip / 123456 / tài khoản vip
 // tài khoản 3 admin / 123456 / tài khoản quản trị
 
-if(localStorage.hasOwnProperty("username")) {
+if(localStorage.hasOwnProperty("codeuser")) {
+
+    var codeuser = localStorage.getItem("codeuser");
+    if(codeuser==="1239snka21") {
+        document.getElementById("userpoint").innerHTML = "0 KIM CƯƠNG";
+        document.getElementById("username").innerHTML = "Tài khoản nghèo";
+        document.getElementById("useravatar").style.borderColor = "#ccc";
+    }
+
+    if(codeuser==="20sj1n28s4") {
+        document.getElementById("username").innerHTML = "Tài khoản xịn";  
+    }
+
+    if(codeuser==="39927dnss3") {
+        document.getElementById("userpoint").innerHTML = "VÔ CỰC KIM CƯƠNG";
+        document.getElementById("username").innerHTML = "Quản trị viên";
+        document.getElementById("useravatar").style.borderColor = "#d60000";
+        document.getElementById("admin").style.display = "block";
+    }
 
 }else {
-    document.getElementById("navbar-user").innerHTML = '<div class="profile"> <img class="navbar-user-avatar" src="./assets/img/user.png"/> <div class="navbar-user-name">Chào mừng bạn!</div> <div class="navbar-user-times" id="remove-user" onclick="removeuser()"><i class="fa fa-times"></i></div> </div> <div class="navbar-tabs"> <div class="navbar-tab-item actived" id="login" onclick="login();">Đăng nhập</div> <div class="navbar-tab-item" id="signup" onclick="signup();">Đăng ký</div> </div> <div class="navbar-content" id="content-login"> <div class="navbar-content-item"> <label class="navbar-lbl">Tên tài khoản</label> <input class="navbar-input" type="text" name="username" id="username" /> <i class="fa fa-user-o"></i> <span class="navbar-tip">từ 3 - 20 ký tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Mật khẩu</label> <input class="navbar-input" type="password" name="password" id="password" /> <i class="fa fa-lock"></i> <span class="navbar-tip">từ 6 - 30 kí tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl"><input type="checkbox" checked/> Ghi nhớ</label> <a href="" class="forgot-password">Quên mật khẩu?</a> </div> <div class="navbar-content-item"> <button class="navbar-btn" name="login">Đăng nhập</button> </div> <div class="navbar-content-item"> <button class="navbar-btn facebook" name="facebook">Đăng nhập với Facebook</button> </div> </div> <div class="navbar-content" id="content-signup"> <div class="navbar-content-item"> <label class="navbar-lbl">Tên tài khoản</label> <input class="navbar-input" type="text" name="username" id="username" /> <i class="fa fa-user-o"></i> <span class="navbar-tip">từ 3 - 20 ký tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Mật khẩu</label> <input class="navbar-input" type="password" name="password" id="password" /> <i class="fa fa-lock"></i> <span class="navbar-tip">từ 6 - 30 kí tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Nhập lại mật khẩu</label> <input class="navbar-input" type="password" name="password2" id="password2" /> <i class="fa fa-lock"></i> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Tên hiển thị</label> <input class="navbar-input" type="text" name="name" id="name" /> <i class="fa fa-comments"></i> <span class="navbar-tip">từ 6 - 30 kí tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Email</label> <input class="navbar-input" type="email" name="email" id="email" /> <i class="fa fa-envelope-o"></i> </div> <div class="navbar-content-item"> <button class="navbar-btn" name="login">Đăng ký</button> </div> </div>';
+    document.getElementById("navbar-user").innerHTML = '<div class="profile"> <img class="navbar-user-avatar" src="./assets/img/user.png"/> <div class="navbar-user-name">Chào mừng bạn!</div> <div class="navbar-user-times" id="remove-user" onclick="removeuser()"><i class="fa fa-times"></i></div> </div> <div class="navbar-tabs"> <div class="navbar-tab-item actived" id="login" onclick="login();">Đăng nhập</div> <div class="navbar-tab-item" id="signup" onclick="signup();">Đăng ký</div> </div> <div class="navbar-content" id="content-login"> <div class="navbar-content-item"> <label class="navbar-lbl">Tên tài khoản</label> <input class="navbar-input" type="text" name="username" id="username" /> <i class="fa fa-user-o"></i> <span class="navbar-tip">từ 3 - 20 ký tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Mật khẩu</label> <input class="navbar-input" type="password" name="password" id="password" /> <i class="fa fa-lock"></i> <span class="navbar-tip">từ 6 - 30 kí tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl"><input type="checkbox" checked/> Ghi nhớ</label> <a href="" class="forgot-password">Quên mật khẩu?</a> </div> <div class="navbar-content-item" id="result"></div> <div class="navbar-content-item"> <button class="navbar-btn" name="login" onclick="submitlogin();">Đăng nhập</button> </div> <div class="navbar-content-item"> <button class="navbar-btn facebook" name="facebook">Đăng nhập với Facebook</button> </div> </div> <div class="navbar-content" id="content-signup"> <div class="navbar-content-item"> <label class="navbar-lbl">Tên tài khoản</label> <input class="navbar-input" type="text" name="username" id="username" /> <i class="fa fa-user-o"></i> <span class="navbar-tip">từ 3 - 20 ký tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Mật khẩu</label> <input class="navbar-input" type="password" name="password" id="password" /> <i class="fa fa-lock"></i> <span class="navbar-tip">từ 6 - 30 kí tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Nhập lại mật khẩu</label> <input class="navbar-input" type="password" name="password2" id="password2" /> <i class="fa fa-lock"></i> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Tên hiển thị</label> <input class="navbar-input" type="text" name="name" id="name" /> <i class="fa fa-comments"></i> <span class="navbar-tip">từ 6 - 30 kí tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Email</label> <input class="navbar-input" type="email" name="email" id="email" /> <i class="fa fa-envelope-o"></i> </div> <div class="navbar-content-item"> <button class="navbar-btn" name="login">Đăng ký</button> </div> </div>';
+}
+
+function logout() {
+    localStorage.removeItem("codeuser");
+    location.reload();
+}
+
+function submitlogin() {
+    var password = document.getElementById("password").value;
+    var username = document.getElementById("username").value;
+
+    if(username==="usernormal"&&password==="123456") {
+        localStorage.setItem("codeuser","1239snka21");
+        location.reload();
+        return;
+    }
+    if(username==="uservip"&&password==="123456") {
+        localStorage.setItem("codeuser","20sj1n28s4");
+        location.reload();
+        return;
+    }
+    if(username==="admin"&&password==="123456") {
+        localStorage.setItem("codeuser","39927dnss3");
+        location.reload();
+        return;
+    }
+    document.getElementById("result").innerHTML = "Đăng nhập không thành công";
+    
 }
 
 if(localStorage.hasOwnProperty("theme")) {

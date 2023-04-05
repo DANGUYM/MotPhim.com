@@ -100,10 +100,15 @@
 
     <div class="navbar-user" id="navbar-user" style="right:-300px;">
         <div class="profile">
-            <img class="navbar-user-avatar" src="https://i.imgur.com/XXIC7OL.jpg"/>
-            <div class="navbar-user-name">Kamic</div>
-            <div class="navbar-user-point">Số điểm thưởng<p class="number-point">10.000 KIM CƯƠNG</p></div>
+            <img class="navbar-user-avatar" id="useravatar" src="https://i.imgur.com/XXIC7OL.jpg"/>
+            <div class="navbar-user-name" id="username">Kamic</div>
+            <div class="navbar-user-point">Số điểm thưởng<p class="number-point" id="userpoint">10.000 KIM CƯƠNG</p></div>
             <div class="navbar-user-times" id="remove-user"><i class="fa fa-times"></i></div>
+        </div>
+        <div class="user-item admin" id="admin">
+            <a href="./admin">
+                <i class="fa fa-rocket"></i>&nbsp;&nbsp;Vào admincp
+            </a>
         </div>
         <hr>
         <div class="user-item">
@@ -150,7 +155,7 @@
         </div>
         <hr>
         <div class="user-item">
-            <a href="./dang-xuat">
+            <a href="#" onclick="logout();">
                 <i class="fa fa-sign-out"></i>&nbsp;&nbsp;Đăng xuất
             </a>
         </div>
