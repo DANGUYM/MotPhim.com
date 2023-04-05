@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+    <title>MotPhim.Com - Trang web xem phim số một tại Việt Nam</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="cache-control" content="max-age=0" />
+	<meta http-equiv="cache-control" content="no-cache" />
+
+	<meta name="robots" content="index, follow" />
+	<meta name="language" content="Vietnamese" />
+
+    <link rel="shortcut icon" href="assets/img/ico.png" type="image/x-icon" />
+
+	<meta name="description" content="Trang xem phim số một Việt Nam, phim mới và phim sớm" />
+	<meta name="keywords" content="phim trung quoc, phim han quoc, phim ngon tinh, anime, vietsub, phim chieu rap" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/home.css"/>
+    <link rel="stylesheet" id="dark"/>
+
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="header-img">
+                <a href="./index.html"><img src="assets/img/logo_white.png" alt="Logo chính thức"></a>
+            </div>
+            <div class="header-menu">
+                <div class="header-menu-items">
+                    <a href="./the-loai.html">Thể loại</a>
+                </div>
+                <div class="header-menu-items">
+                    <a href="./phim-le.html">Phim lẻ</a>
+                </div>
+                <div class="header-menu-items">
+                    <a href="./phim-bo.html">Phim bộ</a>
+                </div>
+                <div class="header-menu-items hidden-ipad">
+                    <a href="./phim-chieu-rap.html">Phim chiếu rạp</a>
+                </div>
+                <div class="header-menu-items hidden-ipad">
+                    <a href="./bang-xep-hang.html">Bảng xếp hạng</a>
+                </div>
+                <div class="header-search hidden-ipad">
+                    <div class="search-box">
+                        <form action="./tim-kiem.html">
+                            <input type="text" name="q" placeholder="Tìm kiếm" autocomplete="off">
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="header-user">
+                <div class="user-login user-avatar nonhidden-mobile" id="menu-mobile">
+                    <i class="fa fa-list"></i>
+                </div>
+                <div class="user-login user-avatar" id="user-avatar">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="user-login user-avatar" id="change-theme">
+                    <i class="fa fa-sun-o"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="navbar-menu" id="navbar-menu" style="left: -300px;">
+        <div class="navbar-menu-times" id="remove-menu"><i class="fa fa-times"></i></div>
+        <div class="search-box">
+            <form action="./tim-kiem.html">
+                <input type="text" name="q" placeholder="Tìm kiếm" autocomplete="off">
+            </form>
+        </div>
+        <div class="menu-item">
+            <a href="./the-loai.html"><i class="fa fa-film"></i>&nbsp;&nbsp;Thể loại</a>
+        </div>
+        <div class="menu-item">
+            <a href="./the-loai.html"><i class="fa fa-tv"></i>&nbsp;&nbsp;Phim lẻ</a>
+        </div>
+        <div class="menu-item">
+            <a href="./the-loai.html"><i class="fa fa-window-restore"></i>&nbsp;&nbsp;Phim bộ</a>
+        </div>
+        <div class="menu-item">
+            <a href="./the-loai.html"><i class="fa fa-video-camera"></i>&nbsp;&nbsp;Phim chiếu rạp</a>
+        </div>
+        <div class="menu-item">
+            <a href="./the-loai.html"><i class="fa fa-star"></i>&nbsp;&nbsp;Bảng xếp hạng</a>
+        </div>
+    </div>
+
+    <div class="navbar-user" id="navbar-user" style="right:-300px;">
+        <div class="profile">
+            <img class="navbar-user-avatar" id="useravatar" src="https://i.imgur.com/XXIC7OL.jpg"/>
+            <div class="navbar-user-name" id="username">Kamic</div>
+            <div class="navbar-user-point">Số điểm thưởng<p class="number-point" id="userpoint">10.000 KIM CƯƠNG</p></div>
+            <div class="navbar-user-times" id="remove-user"><i class="fa fa-times"></i></div>
+        </div>
+        <div class="user-item admin" id="admin">
+            <a href="./admin">
+                <i class="fa fa-rocket"></i>&nbsp;&nbsp;Vào admincp
+            </a>
+        </div>
+        <hr>
+        <div class="user-item">
+            <a href="./thong-tin-tai-khoan">
+                <i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;Thông tin tài khoản
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./cai-dat-tai-khoan">
+                <i class="fa fa-cog"></i>&nbsp;&nbsp;Cài đặt tài khoản
+            </a>
+        </div>
+        <hr>
+        <div class="user-item">
+            <a href="./phim-da-xem">
+                <i class="fa fa-history"></i>&nbsp;&nbsp;Phim đã xem
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./phim-da-thich">
+                <i class="fa fa-heart-o"></i>&nbsp;&nbsp;Phim đã thích
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./phim-dang-theo-doi">
+                <i class="fa fa-bell-o"></i>&nbsp;&nbsp;Phim đang theo dõi
+            </a>
+        </div>
+        <hr>
+        <div class="user-item">
+            <a href="./nap-diem-thuong">
+                <i class="fa fa-money"></i>&nbsp;&nbsp;Nạp điểm thưởng
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./nang-cap-tai-khoan">
+                <i class="fa fa-ticket"></i>&nbsp;&nbsp;Nâng cấp tài khoản
+            </a>
+        </div>
+        <div class="user-item">
+            <a href="./nang-cap-tai-khoan">
+                <i class="fa fa-list"></i>&nbsp;&nbsp;Lịch sử giao dịch
+            </a>
+        </div>
+        <hr>
+        <div class="user-item">
+            <a href="#" onclick="logout();">
+                <i class="fa fa-sign-out"></i>&nbsp;&nbsp;Đăng xuất
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-top-container">
+                <div class="footer-top-content">
+                    <a class="footer-logo" href="./index.html">
+                        <img src="assets/img/logo_white.png" alt="Logo chính thức">
+                    </a>
+                    <a class="footer-logo" href="http://online.gov.vn/Home/WebDetails/58364?AspxAutoDetectCookieSupport=1" target="_blank">
+                        <img src="assets/img/logo-mit.png" alt="Logo MIT">
+                    </a>
+                    <a class="footer-logo" href="http://online.gov.vn/Home/WebDetails/58364?AspxAutoDetectCookieSupport=1" target="_blank">
+                        <img src="assets/img/lgod_mca.png" alt="Logo DMCA">
+                    </a>
+                </div>
+                <div class="footer-top-content" id="quydinh">
+                    <div class="vertical">
+                        <div class="footer-title color-ccc">Quy định</div>
+                        <a href="./dieu-khoan-su-dung.html" class="color-ccc">Điều khoản sử dụng</a>
+                        <a href="./chinh-sach-rieng-tu.html"  class="color-ccc">Chính sách riêng tư</a>
+                        <a href="./chinh-sach-quyen-so-huu-tri-tue.html"  class="color-ccc">Chính sách quyền sở hữu trí tuệ</a>
+                        <a href="./chinh-sach-khac.html"  class="color-ccc">Chính sách khác</a>
+                    </div>
+                    <div class="vertical">
+                        <div class="footer-title color-ccc">Hỗ trợ</div>
+                        <a href="./help-center.html" class="color-ccc">Trung tâm hỗ trợ</a>
+                        <a href="./cau-hoi-thuong-gap.html"  class="color-ccc">Câu hỏi thường gặp</a>
+                        <a href="./lien-he.html"  class="color-ccc">Liên hệ</a>
+                        <a href=""  class="color-ccc" target="_blank">Góp ý</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-top-container">
+                <div class="footer-top-content color-ccc" id="company">
+                    Trường ĐH Công nghiệp Tp. Hồ Chí Minh - Địa chỉ: 12 Nguyễn Văn Bảo, Phường IV, Quận Gò Vấp, Thành phố Hồ Chí Minh.<br>
+                    Email: 123@gmail.com<br>
+                    Giấy phép Cung cấp Dịch vụ Phát thanh, Truyền hình trả tiền số 192/GP_BTTTT cấp ngày 07/05/2020.
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/orther.js"></script>
+    <script>
+        orther(3);
+    </script>
+
+</body>
+</html>
