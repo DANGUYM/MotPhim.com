@@ -115,6 +115,7 @@ menu_mobile.addEventListener('click', function() {
 
     if(navbar_menu.style.left === "-300px") {
         navbar_menu.style.left = "0px";
+        navbar_user.style.right = "-300px";
     }else {
         navbar_menu.style.left = "-300px";
     }
@@ -125,6 +126,7 @@ user_data.addEventListener('click', function() {
 
     if(navbar_user.style.right === "-300px") {
         navbar_user.style.right = "0px";
+        navbar_menu.style.left = "-300px";
     }else {
         navbar_user.style.right = "-300px";
     }

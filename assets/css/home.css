@@ -461,6 +461,7 @@ a {
     position: fixed;
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0/0.1),0 1px 2px -1px rgb(0 0 0/0.1);
     --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+    backdrop-filter: blur(3px);
     z-index: 69;
     padding-top: 80px;
     width: 300px;
@@ -1174,6 +1175,11 @@ a {
 
 /*Giao diện Ipad dọc (768 x 1024)*/
 @media screen and (max-width: 768px){
+
+    .trailer {
+        display: none;
+    }
+
     .header-menu, .trailer {
         display: none;
     }
@@ -1252,7 +1258,7 @@ a {
 /*Giao diện Tablet (480 x 640)*/
 @media screen and (max-width: 480px){
 
-    .tray-item, .collection-item, .footer-top-content, #company {
+    .collection-item, .footer-top-content, #company {
         width: 98%;
     }
 
@@ -1284,6 +1290,10 @@ a {
     .dropdown-category {
         width:350px;
         grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    .tray-item {
+        width:40%;
     }
 
 }
