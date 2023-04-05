@@ -1046,7 +1046,7 @@ a {
 
 /*Giao diện Ipad dọc (768 x 1024)*/
 @media screen and (max-width: 768px){
-    .header-menu, #film-new {
+    .header-menu, .trailer {
         display: none;
     }
     

@@ -29,7 +29,7 @@ function getPreviewFilm(number) {
         document.getElementsByClassName("player-description")[0].innerHTML = "BIỆT ĐỘI RẤT ỔN xoay quanh bộ đôi Quyên (Hoàng Oanh) và Phong (Hứa Vĩ Văn). Sau lần chạm trán tình cờ, bộ đôi lôi kéo Bảy Cục (Võ Tấn Phát), Bảy Súc (Nguyên Thảo), Quạu (Ngọc Phước), Quọ (Ngọc Hoa) tham gia vào phi vụ đặc biệt: Đánh tráo chiếc vòng đính hôn bằng kim cương quý giá và lật tẩy bộ mặt thật của Tuấn - chồng cũ của Quyên trong đám cưới giữa hắn và Tư Xoàn - nữ đại gia miền Tây sở hữu khối tài sản triệu đô. Màn kết hợp bất đắc dĩ của Biệt Đội Rất Ổn - Phong, Quyên và Gia Đình Cục Súc nhằm qua mắt “cô dâu, chú rể” tại khu resort sang chảnh hứa hẹn cực kỳ gay cấn, hồi hộp nhưng không kém phần hài hước, xúc động."; 
     }
     if(number==3) {
-        document.getElementById("player").setAttribute("src","https://www.youtube.com/embed/"+"NEa0J_Q-NIY");
+        document.getElementById("player").setAttribute("src","https://www.youtube.com/embed/"+"hWei0TioFvo");
         document.getElementById("previewtrailer").style.display = "block";
         document.getElementsByClassName("player-title")[0].innerHTML = "The First Slam Dunk";
         document.getElementsByClassName("player-type")[0].innerHTML = "Dành người trên 13 tuổi";
