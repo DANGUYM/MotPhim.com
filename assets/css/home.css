@@ -458,10 +458,6 @@ a {
 .navbar-user, .navbar-menu {
     height: 100%;
     background:#ffffffd1;
-    -webkit-transition: width .3s,-webkit-box-shadow .3s;
-    transition: width .3s,-webkit-box-shadow .3s;
-    transition: width .3s,box-shadow .3s;
-    transition: width .3s,box-shadow .3s,-webkit-box-shadow .3s;
     position: fixed;
     --tw-shadow: 0 1px 3px 0 rgb(0 0 0/0.1),0 1px 2px -1px rgb(0 0 0/0.1);
     --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
@@ -472,12 +468,20 @@ a {
 
 .navbar-user {
     float: right;
-    right: 0px;
+    right: -300px;
+    -webkit-transition: right .3s,-webkit-box-shadow .3s;
+    transition: right .3s,-webkit-box-shadow .3s;
+    transition: right .3s,box-shadow .3s;
+    transition: right .3s,box-shadow .3s,-webkit-box-shadow .3s;
 }
 
 .navbar-menu {
     float: left;
-    left:0px;
+    left:-300px;
+    -webkit-transition: left .3s,-webkit-box-shadow .3s;
+    transition: left .3s,-webkit-box-shadow .3s;
+    transition: left .3s,box-shadow .3s;
+    transition: left .3s,box-shadow .3s,-webkit-box-shadow .3s;
 }
 
 .navbar-menu .search-box {
@@ -532,15 +536,15 @@ a {
     position: absolute;
     top: 80px;
     right: 5px;
-    font-size: 20px;
+    font-size: 15px;
     cursor: pointer;
 }
 
 .navbar-user-times {
     position: absolute;
     top: 80px;
-    left: 20px;
-    font-size: 20px;
+    left: 5px;
+    font-size: 15px;
     cursor: pointer;
 }
 
@@ -1027,6 +1031,90 @@ a {
 #list-status, #list-movie, #list-sort {
     grid-template-columns: repeat(1,minmax(0,1fr));
     width: 150px;
+}
+
+.navbar-tabs {
+    display: flex;
+    justify-content: space-around;
+    text-transform: uppercase;
+    margin: 10px 0px;
+}
+
+.navbar-tab-item {
+    cursor: pointer;
+}
+
+.navbar-tab-item.actived {
+    border-bottom: 2px solid #d60000;
+}
+
+.navbar-content-item {
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.navbar-lbl {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 0.25rem;
+}
+
+.navbar-content {
+    margin: 20px 10px;
+}
+
+.navbar-input {
+    font-size: 14px;
+    padding-left: 1.7rem;
+    background-color: transparent;
+    border-radius: 0.25rem;
+    width: 89%;
+    height: 2rem;
+    border: 1px solid #6b7280;
+}
+
+.navbar-tip {
+    top: 0.25rem;
+    position: absolute;
+    right: 0.5rem;
+    color: #d60000;
+    font-size: 10px;
+}
+
+.navbar-content-item .fa {
+    bottom: 0.5rem;
+    position: absolute;
+    left: 0.5rem;
+    font-size: 18px;
+}
+
+.forgot-password {
+    position: absolute;
+    right: 0.25rem;
+    top: 0rem;
+}
+
+.forgot-password:hover {
+    color: #d60000;
+}
+
+.navbar-btn {
+    background-color: #d60000;
+    text-align: center;
+    color: white;
+    border: 0px;
+    width: 100%;
+    border-radius: 0.25rem;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.navbar-btn.facebook {
+    background-color: #1877F2;
+}
+
+#content-signup {
+    display: none;
 }
 
 /* Cài đặt animation */
