@@ -59,6 +59,9 @@
                 </div>
             </div>
             <div class="header-user">
+                <div class="user-login user-avatar nonhidden-mobile" id="menu-mobile">
+                    <i class="fa fa-list"></i>
+                </div>
                 <div class="user-login user-avatar" id="user-avatar">
                     <i class="fa fa-user"></i>
                 </div>
@@ -137,15 +140,49 @@
                 </div>
                 
                 <div class="category-item">
-                    <span class="category-item-text">Trạng thái</span>
+                    <span class="category-item-text" id="status">Trạng thái</span>
+                    <ul class="dropdown-category" id="list-status" style="display:none;">
+                        <li class="dropdown-category-items">
+                            <input name="status[]" value="1" type="checkbox" data-cate="1">
+                            <label>Hoàn thành</label>
+                        </li>
+                        <li class="dropdown-category-items">
+                            <input name="status[]" value="2" type="checkbox" data-cate="22">
+                            <label>Đang chiếu</label>
+                        </li>
+                        <li class="dropdown-category-items">
+                            <input name="status[]" value="1" type="checkbox" data-cate="3">
+                            <label>Sắp chiếu</label>
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="category-item">
-                    <span class="category-item-text">Định dạng</span>
+                    <span class="category-item-text" id="movie">Định dạng</span>
+                    <ul class="dropdown-category" id="list-movie" style="display:none;">
+                        <li class="dropdown-category-items">
+                            <input name="movie[]" value="1" type="checkbox" data-cate="1">
+                            <label>Phim lẻ</label>
+                        </li>
+                        <li class="dropdown-category-items">
+                            <input name="movie[]" value="2" type="checkbox" data-cate="22">
+                            <label>Phim bộ</label>
+                        </li>
+                    </ul>
                 </div>
                 
                 <div class="category-item">
-                    <span class="category-item-text">Sắp xếp theo</span>
+                    <span class="category-item-text" id="sort">Sắp xếp theo</span>
+                    <ul class="dropdown-category" id="list-sort" style="display:none;">
+                        <li class="dropdown-category-items">
+                            <input name="sort[]" value="1" type="checkbox" data-cate="1">
+                            <label>Mới cập nhật</label>
+                        </li>
+                        <li class="dropdown-category-items">
+                            <input name="sort[]" value="2" type="checkbox" data-cate="22">
+                            <label>Lượt xem</label>
+                        </li>
+                    </ul>
                 </div>  
                     
                 <div class="category-item">

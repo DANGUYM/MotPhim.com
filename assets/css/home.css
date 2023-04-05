@@ -903,6 +903,15 @@ a {
     color:#d60000;
 }
 
+.nonhidden-mobile {
+    display:none;
+}
+
+#menu-mobile {
+    float: left;
+    margin-right: 13px;
+}
+
 /* Giao diện thể loại anime */
 .tray-category {
 	padding-right: 10px;
@@ -969,23 +978,28 @@ a {
     width: 1rem;
     height: 1rem;
     cursor: pointer;
-    
-
 }
 
 .dropdown-category-items input[type="checkbox"]:checked {
   background-color: #d60000;
 }
 
-.dropdown-category-items {
-	font-size: 14px;
+.dropdown-category-items label {
+	font-size: 13px;
     font-weight: 300px;
+    color:#888;
+    margin-left: 0.5rem;
 }
 
 .category-item-text.filter i {
     color:white;
     font-size: 15px;
     animation: zoom-in-zoom-out 2s ease-out infinite;
+}
+
+#list-status, #list-movie, #list-sort {
+    grid-template-columns: repeat(1,minmax(0,1fr));
+    width: 150px;
 }
 
 /* Cài đặt animation */
@@ -1036,6 +1050,10 @@ a {
         display: none;
     }
     
+    .nonhidden-mobile {
+        display:block;
+    }
+
     .tray-content-new-list {
         width: 100%;
         display: flex;
@@ -1092,6 +1110,15 @@ a {
         display:none;
     }
 
+    .tray-category-content {
+        grid-template-columns: repeat(4,minmax(0,1fr));
+        gap: 2.3rem;
+    }
+
+    .category-item {
+        width: 100px;
+    }
+
 }
 
 /*Giao diện Tablet (480 x 640)*/
@@ -1121,6 +1148,16 @@ a {
         display: block;
     }
 
+    .tray-category-content {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 0.7rem;
+    }
+
+    .dropdown-category {
+        width:350px;
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
 }
 
 /*Giao diện Iphone(480 x 640)*/
@@ -1133,6 +1170,20 @@ a {
 
     .slideshow-info-view {
         display:none;
+    }
+
+    .tray-category-content {
+        grid-template-columns: repeat(1,minmax(0,1fr));
+        gap: 0.7rem;
+    }
+
+    .category-item {
+        width: 95%;
+    }
+
+    .dropdown-category {
+        width:95%;
+        grid-template-columns: repeat(1,minmax(0,1fr));
     }
 
 }
