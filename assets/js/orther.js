@@ -63,4 +63,29 @@ function orther(number) {
 
 
     }
+
+    if(number == 3) {
+
+        //Trang xem phim
+
+        var lightdark = document.getElementById("lightdark");
+        var darkplayer = document.getElementById("darkplayer");
+
+        lightdark.addEventListener('click', function() {
+
+            if(darkplayer.style.visibility == "hidden") {
+                document.getElementById("darkplayer").style.visibility = "unset";
+                document.getElementById("darkplayer").style.backgroundColor = "rgba(0, 0, 0, 0.6)";
+                document.getElementById("player-embed").style.zIndex = "99999";
+                lightdark.style.opacity = "100%";
+            }else {
+                document.getElementById("player-embed").style.zIndex = "0";
+                document.getElementById("darkplayer").style.visibility = "hidden";
+                document.getElementById("darkplayer").style.backgroundColor = "transparent";
+                lightdark.style.opacity = "70%";
+            }
+
+        })
+
+    }
 }
