@@ -26,6 +26,7 @@ if(localStorage.hasOwnProperty("codeuser")) {
 
     if(codeuser==="20sj1n28s4") {
         document.getElementById("username").innerHTML = "Tài khoản xịn";  
+        noads();
     }
 
     if(codeuser==="39927dnss3") {
@@ -33,10 +34,18 @@ if(localStorage.hasOwnProperty("codeuser")) {
         document.getElementById("username").innerHTML = "Quản trị viên";
         document.getElementById("useravatar").style.borderColor = "#d60000";
         document.getElementById("admin").style.display = "block";
+        noads();
     }
 
 }else {
     document.getElementById("navbar-user").innerHTML = '<div class="profile"> <img class="navbar-user-avatar" src="./assets/img/user.png"/> <div class="navbar-user-name">Chào mừng bạn!</div> <div class="navbar-user-times" id="remove-user" onclick="removeuser()"><i class="fa fa-times"></i></div> </div> <div class="navbar-tabs"> <div class="navbar-tab-item actived" id="login" onclick="login();">Đăng nhập</div> <div class="navbar-tab-item" id="signup" onclick="signup();">Đăng ký</div> </div> <div class="navbar-content" id="content-login"> <div class="navbar-content-item"> <label class="navbar-lbl">Tên tài khoản</label> <input class="navbar-input" type="text" name="username" id="username" /> <i class="fa fa-user-o"></i> <span class="navbar-tip">từ 3 - 20 ký tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Mật khẩu</label> <input class="navbar-input" type="password" name="password" id="password" /> <i class="fa fa-lock"></i> <span class="navbar-tip">từ 6 - 30 kí tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl"><input type="checkbox" checked/> Ghi nhớ</label> <a href="" class="forgot-password">Quên mật khẩu?</a> </div> <div class="navbar-content-item" id="result"></div> <div class="navbar-content-item"> <button class="navbar-btn" name="login" onclick="submitlogin();">Đăng nhập</button> </div> <div class="navbar-content-item"> <button class="navbar-btn facebook" name="facebook">Đăng nhập với Facebook</button> </div> </div> <div class="navbar-content" id="content-signup"> <div class="navbar-content-item"> <label class="navbar-lbl">Tên tài khoản</label> <input class="navbar-input" type="text" name="username" id="username" /> <i class="fa fa-user-o"></i> <span class="navbar-tip">từ 3 - 20 ký tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Mật khẩu</label> <input class="navbar-input" type="password" name="password" id="password" /> <i class="fa fa-lock"></i> <span class="navbar-tip">từ 6 - 30 kí tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Nhập lại mật khẩu</label> <input class="navbar-input" type="password" name="password2" id="password2" /> <i class="fa fa-lock"></i> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Tên hiển thị</label> <input class="navbar-input" type="text" name="name" id="name" /> <i class="fa fa-comments"></i> <span class="navbar-tip">từ 6 - 30 kí tự</span> </div> <div class="navbar-content-item"> <label class="navbar-lbl">Email</label> <input class="navbar-input" type="email" name="email" id="email" /> <i class="fa fa-envelope-o"></i> </div> <div class="navbar-content-item"> <button class="navbar-btn" name="login">Đăng ký</button> </div> </div>';
+}
+
+function noads() {
+    var ads = document.querySelectorAll("#ads");
+    for (var i = 0; i < ads.length; i++) {
+        ads[i].style.display = "none";
+    }
 }
 
 function logout() {
