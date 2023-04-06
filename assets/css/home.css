@@ -1386,7 +1386,7 @@ a {
 }
 
 .tab-input-comment textarea {
-    width: 100%;
+    width: 98%;
     border-radius: 2px;
     padding: 5px;
     border: none;
@@ -1412,7 +1412,7 @@ a {
     cursor: pointer;
     outline: none;
     position: absolute;
-    right: 0;
+    right: 10px;
 }
 
 .btn-submit-comment {
@@ -1473,7 +1473,52 @@ a {
 }
 
 .container-player {
-    height: 700px;
+    height: 750px;
+}
+
+.infomation-film {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.infomation-film-thumbnai {
+    border-radius: 1rem;
+    width: 12rem;
+}
+
+.infomation-film-meta {
+    width:  calc(100% - 12.25rem);
+}
+
+.infomation-film-thumbnai img {
+    width: 100%;
+}
+
+.lbl-film {
+    width: 80px;
+    display: inline-block;
+    line-height: 40px;
+}
+
+.category-item, .country-item {
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.category-item {
+    background-color: rgba(0, 190, 220, 0.8);
+}
+
+.country-item {
+    background-color: rgba(220, 0, 190, 0.8);
+}
+
+.infomation-film-description {
+    max-height: 180px;
+    overflow: auto;
 }
 
 /* Cài đặt animation */
@@ -1615,6 +1660,11 @@ a {
         margin-left: 0px;
     }
 
+    .infomation-film {
+        margin-left: 10px;
+        width: 95%;
+    }
+
     .film-heart, .film-follow, .film-share {
         font-size: 0px;
     }
@@ -1675,6 +1725,14 @@ a {
     }
 
     .player-episode {
+        width: 95%;
+    }
+
+    .infomation-film-thumbnai {
+        width: 0rem;
+    }
+
+    .infomation-film-meta {
         width: 95%;
     }
 

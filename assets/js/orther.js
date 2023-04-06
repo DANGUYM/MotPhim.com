@@ -72,13 +72,25 @@ function orther(number) {
         var darkplayer = document.getElementById("darkplayer");
         var btnepisode = document.getElementById("btn-episode");
         var btncomment = document.getElementById("btn-comment");
+        var btninfomation = document.getElementById("btn-infomation");
 
         btnepisode.addEventListener('click', function() {
 
             document.getElementById("tab-episode").style.display = "block";
             document.getElementById("tab-comment").style.display = "none";
             btncomment.classList.remove("actived");
+            btninfomation.classList.remove("actived");
             btnepisode.classList.add("actived");
+
+        });
+
+        btninfomation.addEventListener('click', function() {
+
+            document.getElementById("tab-episode").style.display = "none";
+            document.getElementById("tab-comment").style.display = "none";
+            btncomment.classList.remove("actived");
+            btninfomation.classList.add("actived");
+            btnepisode.classList.remove("actived");
 
         });
 
@@ -86,6 +98,7 @@ function orther(number) {
 
             document.getElementById("tab-episode").style.display = "none";
             document.getElementById("tab-comment").style.display = "block";
+            btninfomation.classList.remove("actived");
             btncomment.classList.add("actived");
             btnepisode.classList.remove("actived");
 
