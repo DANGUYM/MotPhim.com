@@ -41,7 +41,7 @@ body {
 .search-box input {
     background-color: transparent;
     color: #c3c3c3;
-    border-color: #e5e7eb;
+    border-color: #5c5c5c;
 }
 
 .search-box .fa {
@@ -71,4 +71,8 @@ body {
 
 .player-sidebar-header, .tab-episode-info {
     border-bottom: 1px solid #5c5c5c;
+}
+
+.navbar-user hr {
+    border-color: #5c5c5c;
 }
