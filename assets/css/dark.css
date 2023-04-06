@@ -68,3 +68,7 @@ body {
 .player-type {
     color:white;
 }
+
+.player-sidebar-header, .tab-episode-info {
+    border-bottom: 1px solid #5c5c5c;
+}
