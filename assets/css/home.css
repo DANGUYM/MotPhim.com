@@ -1507,14 +1507,14 @@ a {
     line-height: 40px;
 }
 
-.category-item, .country-item {
+.categoryfilm-item, .country-item {
     padding: 0.25rem 0.5rem;
     border-radius: 5px;
     cursor: pointer;
     color: white;
 }
 
-.category-item {
+.categoryfilm-item {
     background-color: rgba(0, 190, 220, 0.8);
 }
 
