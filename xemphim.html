@@ -196,11 +196,11 @@
             </div>
             <div class="player-episode">
                 <div class="player-sidebar-header">
-                    <div class="tab-item actived" id="btnepisode">Danh sách tập</div>
+                    <div class="tab-item actived" id="btn-episode">Danh sách tập</div>
                     <div class="tab-item" id="btn-infomation">Thông tin</div>
                     <div class="tab-item comment" id="btn-comment">Bình luận</div>
                 </div>
-                <div class="tab-content">
+                <div class="tab-content" id="tab-episode">
                     <div class="tab-episode-info">
                         <div class="tab-episode-total">Tổng số: <span id="totalvideos">78</span> video</div>
                         <div class="tab-episode-select">Tập <input type="number" id="quickSearch" min="1" max="746" value="505"></div>
@@ -293,8 +293,228 @@
 
                     </div>
                 </div>
+
+                <div class="tab-content" id="tab-comment" style="display:none;">
+                    <div class="tab-input-comment">
+                        <textarea name="comment" id="comment" placeholder="Nhập bình luận"></textarea>
+                        <div class="btn-submit-comment">
+                            <input type="button" id="submitButton" value="Đăng"/>
+                        </div>
+                    </div>
+                    <div class="tab-list-comment">
+
+                        <div class="comment-item">
+                            <div class="comment-thumbnail-user">
+                                <img src="./assets/img/user1.png">
+                            </div>
+                            <div class="comment-meta">
+                                <div class="comment-name-user">Doraemon</div>
+                                <div class="comment-content">Phim này có hay không dậy? Sao thấy view cao quá trời quá đất.</div>
+                                <div class="comment-tool">
+                                    <div class="tool-reply"><i class="fa fa-comment-o"></i> trả lời</div>
+                                    <div class="tool-date"><i class="fa fa-clock-o"></i> 5 ngày trước</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-thumbnail-user">
+                                <img src="./assets/img/user1.png">
+                            </div>
+                            <div class="comment-meta">
+                                <div class="comment-name-user">Doraemon</div>
+                                <div class="comment-content">Phim này có hay không dậy? Sao thấy view cao quá trời quá đất.</div>
+                                <div class="comment-tool">
+                                    <div class="tool-reply"><i class="fa fa-comment-o"></i> trả lời</div>
+                                    <div class="tool-date"><i class="fa fa-clock-o"></i> 5 ngày trước</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-thumbnail-user">
+                                <img src="./assets/img/user1.png">
+                            </div>
+                            <div class="comment-meta">
+                                <div class="comment-name-user">Doraemon</div>
+                                <div class="comment-content">Phim này có hay không dậy? Sao thấy view cao quá trời quá đất.</div>
+                                <div class="comment-tool">
+                                    <div class="tool-reply"><i class="fa fa-comment-o"></i> trả lời</div>
+                                    <div class="tool-date"><i class="fa fa-clock-o"></i> 5 ngày trước</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-thumbnail-user">
+                                <img src="./assets/img/user1.png">
+                            </div>
+                            <div class="comment-meta">
+                                <div class="comment-name-user">Doraemon</div>
+                                <div class="comment-content">Phim này có hay không dậy? Sao thấy view cao quá trời quá đất.</div>
+                                <div class="comment-tool">
+                                    <div class="tool-reply"><i class="fa fa-comment-o"></i> trả lời</div>
+                                    <div class="tool-date"><i class="fa fa-clock-o"></i> 5 ngày trước</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-thumbnail-user">
+                                <img src="./assets/img/user1.png">
+                            </div>
+                            <div class="comment-meta">
+                                <div class="comment-name-user">Doraemon</div>
+                                <div class="comment-content">Phim này có hay không dậy? Sao thấy view cao quá trời quá đất.</div>
+                                <div class="comment-tool">
+                                    <div class="tool-reply"><i class="fa fa-comment-o"></i> trả lời</div>
+                                    <div class="tool-date"><i class="fa fa-clock-o"></i> 5 ngày trước</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-thumbnail-user">
+                                <img src="./assets/img/user1.png">
+                            </div>
+                            <div class="comment-meta">
+                                <div class="comment-name-user">Doraemon</div>
+                                <div class="comment-content">Phim này có hay không dậy? Sao thấy view cao quá trời quá đất.</div>
+                                <div class="comment-tool">
+                                    <div class="tool-reply"><i class="fa fa-comment-o"></i> trả lời</div>
+                                    <div class="tool-date"><i class="fa fa-clock-o"></i> 5 ngày trước</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-thumbnail-user">
+                                <img src="./assets/img/user1.png">
+                            </div>
+                            <div class="comment-meta">
+                                <div class="comment-name-user">Doraemon</div>
+                                <div class="comment-content">Phim này có hay không dậy? Sao thấy view cao quá trời quá đất.</div>
+                                <div class="comment-tool">
+                                    <div class="tool-reply"><i class="fa fa-comment-o"></i> trả lời</div>
+                                    <div class="tool-date"><i class="fa fa-clock-o"></i> 5 ngày trước</div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
             </div>
         </div>
+
+        <selection class="tray" id="filminvid">
+            <div class="tray-title">
+                <h5>
+                    <a href="./hom-nay-xem-gi">🎬 Phim chiếu rạp</a>
+                </h5>
+            </div>
+
+            <div class="tray-content" id="film-today">
+
+                <div class="tray-item">
+                    <a href="./one-piece-film-red">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film16.jpg" alt="One Piece Film: Red">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">One Piece Film: Red</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">239.283 xem</div>
+                                <div class="tray-film-episodes">181 phút</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Nhật Bản</div>
+                    </a>
+                </div>
+                
+                <div class="tray-item">
+                    <a href="./lat-mat-48h">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film17.jpg" alt="Lật mặt 48h">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Lật mặt 48h</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">1.230.281 xem</div>
+                                <div class="tray-film-episodes">110 phút</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Việt Nam</div>
+                    </a>
+                </div>
+
+                <div class="tray-item unhidden-phone">
+                    <a href="./dan-choi-khong-so-con-roi">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film13.jpg" alt="Dân chơi không sợ con rơi">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Dân chơi không sợ con rơi</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">1.382.332 xem</div>
+                                <div class="tray-film-episodes">Full</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Việt Nam</div>
+                    </a>
+                </div>
+
+                <div class="tray-item">
+                    <a href="./avengers-endgame">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film19.jpg" alt="Avengers: Endgame">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">HD</span>
+                            <div class="tray-item-today-title">Avengers: Endgame</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">13.483.812 xem</div>
+                                <div class="tray-film-episodes">181 phút</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Hoa Kỳ</div>
+                    </a>
+                </div>
+
+                <div class="tray-item">
+                    <a href="./chi-chi-em-em-2">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film12.jpg" alt="Chị chị em em 2">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Chị chị em em 2</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">21.929 xem</div>
+                                <div class="tray-film-episodes">Full</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Việt Nam</div>
+                    </a>
+                </div>
+
+                <div class="tray-item unhidden-phone">
+                    <a href="./muon-gap-anh">
+                        <img class="tray-item-thumbnail" src="assets/img/film/film20.jpg" alt="Muốn gặp anh">
+                        <div class="tray-item-today-description">
+                            <span class="tray-item-quality">FHD</span>
+                            <div class="tray-item-today-title">Muốn gặp anh</div>
+                            <div class="tray-item-meta-info">
+                                <div class="tray-film-views">133.652 xem</div>
+                                <div class="tray-film-episodes">107 phút</div>
+                            </div>
+                        </div>
+                        <div class="tray-item-play-button"><i class="fa fa-play"></i></div>
+                        <div class="tray-item-audio">Đài Loan</div>
+                    </a>
+                </div>
+
+            </div>
+
+        </selection>
 
     </div>
 

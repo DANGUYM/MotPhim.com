@@ -3,7 +3,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 1.428571429;
-    background-color: #333;
+    background-color: #070112;
 }
 
 * {
@@ -20,7 +20,6 @@ body {
 }
 
 .header {
-    background-color: #333;
     box-shadow: 0 0 1px 0 #adadad;
     border-bottom: none;
     overflow: hidden;
@@ -34,7 +33,7 @@ body {
     background-color:black;
 }
 
-.navbar-user, .navbar-menu {
+.navbar-user, .navbar-menu, .dropdown-category {
     background-color: #000000d1;
 }
 
@@ -53,7 +52,7 @@ body {
 }
 
 .title-news {
-    background-color: #212121;
+    background-color: #070112;
 }
 
 .tray-content-news{
@@ -69,10 +68,18 @@ body {
     color:white;
 }
 
-.player-sidebar-header, .tab-episode-info {
+.player-sidebar-header, .tab-episode-info, .comment-item, .tab-input-comment {
     border-bottom: 1px solid #5c5c5c;
 }
 
 .navbar-user hr {
     border-color: #5c5c5c;
+}
+
+.tab-input-comment textarea {
+    background: #333;
+}
+
+.footer, .header {
+    background: black;
 }

@@ -70,6 +70,26 @@ function orther(number) {
 
         var lightdark = document.getElementById("lightdark");
         var darkplayer = document.getElementById("darkplayer");
+        var btnepisode = document.getElementById("btn-episode");
+        var btncomment = document.getElementById("btn-comment");
+
+        btnepisode.addEventListener('click', function() {
+
+            document.getElementById("tab-episode").style.display = "block";
+            document.getElementById("tab-comment").style.display = "none";
+            btncomment.classList.remove("actived");
+            btnepisode.classList.add("actived");
+
+        });
+
+        btncomment.addEventListener('click', function() {
+
+            document.getElementById("tab-episode").style.display = "none";
+            document.getElementById("tab-comment").style.display = "block";
+            btncomment.classList.add("actived");
+            btnepisode.classList.remove("actived");
+
+        });
 
         lightdark.addEventListener('click', function() {
 
