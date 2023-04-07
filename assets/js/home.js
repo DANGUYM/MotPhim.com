@@ -1,6 +1,7 @@
 var remove_preview_trailer = document.getElementById('remove-trailer');
 var preview_trailer = document.getElementById('previewtrailer');
 var myClassElements = document.getElementsByClassName("trailerfilm");
+var myVideo = document.getElementById("myVideo");
 
 remove_preview_trailer.addEventListener('click', function(){
     preview_trailer.style.display = "none";
@@ -80,9 +81,36 @@ function getPreviewFilm(number) {
     }
 }
 
+
+
+function toggleMute() {
+    var iconVolume = document.getElementById("iconVolume");
+
+    if (myVideo.muted) {
+        myVideo.muted = false;
+        iconVolume.classList.add("fa-volume-up");
+        iconVolume.classList.remove("fa-volume-off");
+      } else {
+        myVideo.muted = true;
+        iconVolume.classList.add("fa-volume-off");
+        iconVolume.classList.remove("fa-volume-up");
+      }
+}
+
+myVideo.addEventListener('play', () => {
+    var iconPlay = document.getElementById("iconPlay");
+    iconPlay.classList.add("fa-pause");
+    iconPlay.classList.remove("fa-play");
+})
+
+myVideo.addEventListener('pause', () => {
+    var iconPlay = document.getElementById("iconPlay");
+    iconPlay.classList.add("fa-play");
+    iconPlay.classList.remove("fa-pause");
+})
+
 var slideshowvideos = document.getElementById("slideshow-videos");
 slideshowvideos.addEventListener('mouseover', function() {
-    var myVideo = document.getElementById("myVideo");
     myVideo.play();
 });
 

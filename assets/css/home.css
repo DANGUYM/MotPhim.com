@@ -1569,7 +1569,7 @@ a {
     width: 100%;
 }
 
-.slideshow-videos-play {
+.slideshow-videos-play, .slideshow-videos-paused {
     position: absolute;
     font-size: 15px;
     padding: 0.5rem 3rem;
@@ -1585,7 +1585,13 @@ a {
     cursor: pointer;
 }
 
-.slideshow-videos-play .fa {
+.slideshow-videos-paused {
+    left: 200px;
+    width: 10px;
+    padding: 0.5rem 1rem;
+}
+
+.slideshow-videos-play .fa, .slideshow-videos-paused .fa {
     color: white;
 }
 

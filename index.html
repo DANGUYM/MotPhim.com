@@ -183,12 +183,15 @@
                         <img src="./assets/videos/logo1.png" alt="Lặt mặt 4">
                     </div>
                     <div class="slideshow-videos-play">
-                        <i class="fa fa-play"></i> Xem phim
+                        <i class="fa fa-eye"></i> Xem phim
+                    </div>
+                    <div class="slideshow-videos-paused">
+                        <i class="fa fa-play" id="iconPlay"></i>
                     </div>
                 </div>
                 <div class="slideshow-videos-right">
                     <div class="slideshow-video-items">C18</div>
-                    <div class="slideshow-video-items"><i class="fa fa-volume-up"></i></div>
+                    <div class="slideshow-video-items" onclick="toggleMute()"><i id="iconVolume" class="fa fa-volume-up"></i></div>
                 </div>
             </div>
         </div>
@@ -267,7 +270,7 @@
             <div class="tray-content-new">
 
                 <div class="tray-content-new-first">
-                    <a href="./chi-chi-em-em-2">
+                    <a href="./xemphim.html">
                         <img class="tray-item-thumbnail" src="assets/img/film/film1.jpg" onmouseover="this.src='assets/img/gif/film1.gif'" onmouseout="this.src='assets/img/film/film1.jpg'" alt="Chị chị em em 2">
                         <div class="tray-item-description">
                             <div class="tray-item-view">21.929 lượt xem</div>
