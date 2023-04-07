@@ -2,7 +2,7 @@ var remove_preview_trailer = document.getElementById('remove-trailer');
 var preview_trailer = document.getElementById('previewtrailer');
 var myClassElements = document.getElementsByClassName("trailerfilm");
 var myVideo = document.getElementById("myVideo");
-var i = 0;
+var count = 0;
 
 remove_preview_trailer.addEventListener('click', function(){
     preview_trailer.style.display = "none";
@@ -122,6 +122,26 @@ var slideshowvideos = document.getElementById("slideshow-videos");
 slideshowvideos.addEventListener('mouseover', function() {
     myVideo.play();
 });
+
+myVideo.addEventListener("ended", () => {
+
+    var logoVideo = document.getElementById("logoVideo");
+
+    if(count==0) {
+        myVideo.poster = 'https://i.imgur.com/3YF9HF2.png';
+        myVideo.src = './assets/videos/202304071425.mp4';
+        logoVideo.src = './assets/videos/logo2.png';
+        myVideo.load();
+        count++;
+    }else {
+        myVideo.poster = 'https://i.imgur.com/RGjz89k.jpg';
+        myVideo.src = './assets/videos/1149434306409740104.mp4';
+        logoVideo.src = './assets/videos/logo1.png';
+        myVideo.load();
+        count--;
+    }
+});
+
 
 function showTooltip(id) {
     document.getElementById(id).style.display = "block";
