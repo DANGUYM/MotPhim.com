@@ -2,6 +2,7 @@ var remove_preview_trailer = document.getElementById('remove-trailer');
 var preview_trailer = document.getElementById('previewtrailer');
 var myClassElements = document.getElementsByClassName("trailerfilm");
 var myVideo = document.getElementById("myVideo");
+var i = 0;
 
 remove_preview_trailer.addEventListener('click', function(){
     preview_trailer.style.display = "none";
@@ -80,6 +81,8 @@ function getPreviewFilm(number) {
         document.getElementsByClassName("player-description")[0].innerHTML = "Thanh Gươm Diệt Quỷ: Đường Đến Làng Rèn Gươm sẽ tái hiện trận chiến khốc liệt nhất tại Phố Đèn Đỏ trong tập 10 và 11 giữa Tanjiro, Sound Hashira, Tengen Uzui với anh em Thượng Huyền Lục - Daki và Gyutaro lần đầu tiên trên màn ảnh rộng. Bên cạnh đó, phim sẽ công chiếu tập 1 của Làng Rèn Gươm: Sau trận chiến khốc liệt với anh em quỷ Thượng Huyền Lục Gyuutarou và Daki tại Phố Đèn Đỏ, Tanjiro và các kiếm sĩ diệt quỷ đều bị thương nặng và được đưa trở về trụ sở của Đội Diệt Quỷ để dưỡng thương và phục hồi. Sau trận chiến, thanh gươm của Tanjiro cũng bị hư hỏng nặng và lúc này, cậu cần một thanh gươm mới để tiếp tục lên đường làm nhiệm vụ. Cậu được đưa đến Làng Rèn Gươm, nơi phụ trách rèn vũ khí cho các kiếm sĩ của Đội Diệt Quỷ và chuẩn bị cho trận chiến mới với các thành viên mạnh nhất trong hàng Thượng Huyền của Thập Nhị Quỷ Nguyệt.";      
     }
 }
+
+
 
 function togglePlay() {
     if(myVideo.paused) {
