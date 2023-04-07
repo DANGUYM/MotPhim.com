@@ -20,7 +20,7 @@ body {
 }
 
 .header {
-    box-shadow: 0 0 1px 0 #adadad;
+    box-shadow: none;
     border-bottom: none;
     overflow: hidden;
 }
