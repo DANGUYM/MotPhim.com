@@ -133,12 +133,20 @@ myVideo.addEventListener("ended", () => {
         logoVideo.src = './assets/videos/logo2.png';
         myVideo.load();
         count++;
-    }else {
+    }
+    if(count==1) {
+        myVideo.poster = 'https://i.imgur.com/mWfztty.jpg';
+        myVideo.src = './assets/videos/3123187583815696475.mp4';
+        logoVideo.src = './assets/videos/logo3.png';
+        myVideo.load();
+        count++;
+    }
+    if(count==2) {
         myVideo.poster = 'https://i.imgur.com/RGjz89k.jpg';
         myVideo.src = './assets/videos/1149434306409740104.mp4';
         logoVideo.src = './assets/videos/logo1.png';
         myVideo.load();
-        count--;
+        count=0;
     }
 });
 
