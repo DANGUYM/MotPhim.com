@@ -1690,17 +1690,25 @@ a {
     .tray.collection {
         border-radius:0px;
     }
+
+    #slideshow-videos {
+        height: 300px;
+    }
 }
 
 /*Giao diện Ipad dọc (768 x 1024)*/
 @media screen and (max-width: 768px){
 
     #slideshow-videos {
-        display: none;
+        height: 250px;
     }
 
-    .slideshow {
-        display: block;
+    .slideshow-videos-logo {
+        width: 150px;
+    }
+
+    .slideshow-videos-item:hover .slideshow-videos-logo {
+        width: 170px;
     }
 
     #btn-infomation {
@@ -1822,6 +1830,14 @@ a {
 
 /*Giao diện Tablet (480 x 640)*/
 @media screen and (max-width: 480px){
+
+    #slideshow-videos {
+        display: none;
+    }
+
+    .slideshow {
+        display: block;
+    }
 
     .collection-item, .footer-top-content, #company {
         width: 98%;
