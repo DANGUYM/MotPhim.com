@@ -81,7 +81,13 @@ function getPreviewFilm(number) {
     }
 }
 
-
+function togglePlay() {
+    if(myVideo.paused) {
+        myVideo.play();
+    }else {
+        myVideo.pause();
+    }
+}
 
 function toggleMute() {
     var iconVolume = document.getElementById("iconVolume");
