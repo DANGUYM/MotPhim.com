@@ -80,6 +80,20 @@ function getPreviewFilm(number) {
     }
 }
 
+var slideshowvideos = document.getElementById("slideshow-videos");
+slideshowvideos.addEventListener('mouseover', function() {
+    var myVideo = document.getElementById("myVideo");
+    myVideo.play();
+});
+
+function showTooltip(id) {
+    document.getElementById(id).style.display = "block";
+  }
+  
+  function hideTooltip(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
 for (var i = 0; i < myClassElements.length; i++) {
     myClassElements[i].addEventListener("click", function(event) {
       var parentTrailerfilm = event.target.closest(".trailerfilm");
@@ -87,7 +101,7 @@ for (var i = 0; i < myClassElements.length; i++) {
       getPreviewFilm(index);
       alert("Đã click vào phần tử thứ " + number + " trong danh sách");
     });
-  }
+}
   
   $('#left1').on('click', function() {
       $('.tray-content-ranking').animate({

@@ -1527,6 +1527,123 @@ a {
     overflow: auto;
 }
 
+#slideshow-videos {
+    position: relative;
+    padding-top: 70px;
+    display: block;
+    height: 500px;
+    overflow: hidden;
+    margin-bottom: -70px;
+}
+
+.slideshow {
+    display: none;
+}
+
+.slideshow-videos-right {
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+.slideshow-videos-left {
+    position: absolute;
+    left: 30px;
+    bottom: 70px;
+    display: inline-block;
+}
+
+.slideshow-videos-logo {
+    -webkit-transition: width .3s,-webkit-box-shadow .3s;
+    transition: width .3s,-webkit-box-shadow .3s;
+    transition: width .3s,box-shadow .3s;
+    transition: width .3s,box-shadow .3s,-webkit-box-shadow .3s;
+    width: 250px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.slideshow-videos-logo img {
+    width: 100%;
+}
+
+.slideshow-videos-play {
+    position: absolute;
+    font-size: 15px;
+    padding: 0.5rem 3rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #101010;
+    color: white;
+    display: inline-block;
+    width: 100px;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.slideshow-videos-play .fa {
+    color: white;
+}
+
+.slideshow-videos-play:hover {
+    background-color: #232323;
+}
+
+.slideshow-video-items {
+    border: 2px solid #ffffff;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    line-height: 50px;
+    border-radius: 9999px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    margin: 20px 10px;
+    cursor: pointer;
+}
+
+.slideshow-infomation {
+    padding: 50px 5px 5px;
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,0),rgba(0,0,0,.39) 34%,black 87%);
+    bottom: 0;
+    color: #eee;
+    height: 100px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.slideshow-video-items .fa {
+    color: white;
+}
+
+.slideshow-videos-item:hover .slideshow-videos-logo {
+    width: 300px;
+}
+
+/* .tray-item-tooltip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    z-index: 1;
+    background-color: gray;
+    color: white;
+    padding: 10px;
+    width:200px;
+    height:200px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%, 0% 0%, 20% 50%);
+} */
+
 /* Cài đặt animation */
 
 @keyframes zoom-in-zoom-out {
@@ -1571,6 +1688,14 @@ a {
 
 /*Giao diện Ipad dọc (768 x 1024)*/
 @media screen and (max-width: 768px){
+
+    #slideshow-videos {
+        display: none;
+    }
+
+    .slideshow {
+        display: block;
+    }
 
     #btn-infomation {
         display: block;
