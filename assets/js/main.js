@@ -190,6 +190,18 @@ document.getElementById("tool-mobile").addEventListener('click', function() {
 
 })
 
+document.getElementById("ontop").addEventListener('click', function() {
+    const currentPosition = window.pageYOffset;
+    const scrollStep = -currentPosition / 20;
+    const scrollAnimation = setInterval(function() {
+        window.scrollBy(0, scrollStep);
+        if (window.pageYOffset <= 0) {
+            clearInterval(scrollAnimation);
+        }
+    }, 15);
+    document.getElementById("tool-mobile").click();
+});
+
 // if(loginCookie) {
 //     var cookieValue = myCookie.split('=')[1];
 //     var user_name = document.getElementsByClassName("navbar-user-name").innnerHTML(cookieValue);
