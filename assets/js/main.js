@@ -202,6 +202,10 @@ document.getElementById("ontop").addEventListener('click', function() {
     document.getElementById("tool-mobile").click();
 });
 
+document.getElementById("actionhome").addEventListener('click', function() {
+    window.location.assign("./index.html");
+})
+
 // if(loginCookie) {
 //     var cookieValue = myCookie.split('=')[1];
 //     var user_name = document.getElementsByClassName("navbar-user-name").innnerHTML(cookieValue);

@@ -1721,6 +1721,19 @@
         bottom: 5px;
         left: 10px;
     }
+
+    .pages-404 {
+        margin: auto;
+        display: table-cell;
+        max-width: 300px;
+        margin-top: 30px;
+    }
+
+    .container-404 {
+        height: 50vh;
+        line-height: 50vh;
+    }
+
     /* .tray-item-tooltip {
     position: absolute;
     top: 0;
