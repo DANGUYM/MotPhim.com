@@ -1401,6 +1401,15 @@
         transform: scale(1.2);
     }
     
+    .episode-item.actived .episode-item-thumbnai {
+        border: 2px dashed #d80f16;
+    }
+
+    .episode-item.actived .episode-item-title {
+        font-weight: 500;
+        color: #d80f16;
+    }
+
     .tab-input-comment textarea {
         width: 98%;
         border-radius: 2px;
@@ -1534,6 +1543,9 @@
     
     .categoryfilm-item {
         background-color: rgba(0, 190, 220, 0.8);
+        margin-right: 0.25rem;
+        display: inline-block;
+        white-space: nowrap;
     }
     
     .country-item {

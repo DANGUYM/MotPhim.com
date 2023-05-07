@@ -219,7 +219,7 @@
                         <div class="tab-episode-total">Tổng số: <span id="totalvideos">78</span> video</div>
                         <div class="tab-episode-select">Tập <input type="number" id="quickSearch" min="1" max="746" value="505"></div>
                     </div>
-                    <div class="tab-episode-list">
+                    <div class="tab-episode-list" id="listvideo">
                         
                         <div class="episode-item">
                             <a class="episode-item-content">
@@ -425,11 +425,11 @@
             </div>
 
             <div class="player-main infomation-film">
-                <div class="infomation-film-thumbnai">
+                <div class="infomation-film-thumbnai" id="phimthumbnail">
                     <img src="./assets/img/film/film9.jpg" alt="Doraemon"/>
                 </div>
                 <div class="infomation-film-meta">
-                    <div class="infomation-film-category">
+                    <div class="infomation-film-category" id="phimcategory">
                         <span class="lbl-film">Thể loại</span>
                         <span class="categoryfilm-item">Hài hước</span>
                         <span class="categoryfilm-item">Viễn tưởng</span>
@@ -437,9 +437,9 @@
                     </div>
                     <div class="infomation-film-country">
                         <span class="lbl-film">Quốc gia</span>
-                        <span class="country-item">Nhật Bản</span>
+                        <span class="country-item" id="phimcountry">Nhật Bản</span>
                     </div>
-                    <div class="infomation-film-description">
+                    <div class="infomation-film-description" id="phimdescription">
                         Bộ phim kể về một chú mèo máy tên là Doraemon đến từ thế kỉ 22 để giúp một cậu bé lớp 4 hậu đậu tên là Nobi Nobita. Các câu chuyện của Doraemon thường ngắn gọn, dễ hiểu, dí dỏm và mang cái nhìn lạc quan về cuộc sống tương lai cũng như sự phát triển của khoa học - kĩ thuật.
                     </div>
                 </div>
@@ -624,8 +624,15 @@
 
     <script type="text/javascript" src="assets/js/main.js"></script>
     <script type="text/javascript" src="assets/js/orther.js"></script>
+    <script type="text/javascript" src="assets/js/getvideo.js"></script>
     <script>
         orther(3);
+
+        function setPhim(idphim, idvideo) {
+            localStorage.setItem("idphim", idphim);
+            localStorage.setItem("idvideo", idvideo);
+            window.location.reload();
+        }
     </script>
 
 </body>

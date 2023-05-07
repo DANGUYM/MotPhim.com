@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=gb18030">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>MotPhim Player</title>
+            
+    <!-- Favicons -->
+	<link rel="shortcut icon" href="../assets/img/ico.png" type="image/x-icon" />
+
+	<!-- Core Funcs -->
+  	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  	<script src="../assets/js/jwplayer.js"></script>
+	<!-- END Core Funcs -->
+	<style>* {margin: 0px;}html {overflow: hidden;}</style>	    
+</head>
+
+<body>
+	<div id="encrpyt">
+	</div>
+	<!-- Core Streaming -->
+	<script>
+			jwplayer.key = "cLGMn8T20tGvW+0eXPhq4NNmLB57TrscPjd1IyJF84o="; 			
+
+			var player = jwplayer('encrpyt');
+
+			player.setup({
+			  sources: [ {
+					file: "https://vie.haiphim.com/20220329/3028_1a136718/index.m3u8", label: "HD",
+					type: "video/mp4"
+			  }
+              ], 
+						  autostart: false,      
+			  playbackRateControls: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 2],   
+			  abouttext:  "2021 © MOTPHIM GROUP", 
+			  aboutlink: "https://www.uniime.net",         
+ 
+			  width: $(window).width(),
+		      height: $(window).height()	          
+			});
+
+			$(document).ready(function() {
+				$(window).resize(function(){
+					jwplayer().resize($(window).width(),$(window).height())
+				})
+			})
+
+	</script>
+	<!-- END Core Streaming -->
+</body>
+</html>
