@@ -5,21 +5,21 @@ const app = express();
 // Sử dụng session middleware
 const session = require('express-session');
 app.use(session({
-  secret: 'secret-key',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false }
+    secret: 'secret-key',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
 }));
 
 // Định nghĩa một API để lưu trữ thông tin session
 app.get('/setSession', function(req, res) {
-  req.session.name = 'John';
-  res.send('Session set successfully');
+    req.session.name = 'John';
+    res.send('Session set successfully');
 });
 
 // Khởi động server
 app.listen(3000, function() {
-  console.log('Server is running on port 3000');
+    console.log('Server is running on port 3000');
 });
 
 
@@ -30,16 +30,16 @@ xhr.open("GET", "/session", true);
 
 // Xử lý kết quả trả về từ yêu cầu Ajax
 xhr.onreadystatechange = function() {
-  if (xhr.readyState === 4 && xhr.status === 200) {
-    // Lấy thông tin session từ dữ liệu trả về
-    var sessionData = JSON.parse(xhr.responseText);
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        // Lấy thông tin session từ dữ liệu trả về
+        var sessionData = JSON.parse(xhr.responseText);
 
-    // Truy cập thông tin session
-    var sessionId = sessionData.sessionId;
-    var userName = sessionData.name;
-    console.log("Session ID: " + sessionId);
-    console.log("User name: " + userName);
-  }
+        // Truy cập thông tin session
+        var sessionId = sessionData.sessionId;
+        var userName = sessionData.name;
+        console.log("Session ID: " + sessionId);
+        console.log("User name: " + userName);
+    }
 };
 
 // Gửi yêu cầu Ajax để lấy thông tin session

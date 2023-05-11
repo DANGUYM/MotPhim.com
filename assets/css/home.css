@@ -1268,6 +1268,10 @@
         color: white;
     }
     
+    #downloadvideo {
+        left: 65px;
+    }
+    
     .lightdark {
         background-color: transparent;
         backdrop-filter: blur(2px);
@@ -1404,12 +1408,12 @@
     .episode-item.actived .episode-item-thumbnai {
         border: 2px dashed #d80f16;
     }
-
+    
     .episode-item.actived .episode-item-title {
         font-weight: 500;
         color: #d80f16;
     }
-
+    
     .tab-input-comment textarea {
         width: 98%;
         border-radius: 2px;
@@ -1732,19 +1736,18 @@
         bottom: 5px;
         left: 10px;
     }
-
+    
     .pages-404 {
         margin: auto;
         display: table-cell;
         max-width: 300px;
         margin-top: 30px;
     }
-
+    
     .container-404 {
         height: 50vh;
         line-height: 50vh;
     }
-
     /* .tray-item-tooltip {
     position: absolute;
     top: 0;

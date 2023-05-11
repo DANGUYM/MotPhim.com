@@ -1,70 +1,69 @@
-
 function orther(number) {
-    if(number == 1) {
+    if (number == 1) {
 
         //Trang thể loại
 
-        function chooseFilter(x,y) {
+        function chooseFilter(x, y) {
 
             document.getElementById("list-category").style.display = "none";
 
             var status = document.getElementById(x);
 
             status.addEventListener('click', function() {
-                if(document.getElementById(y).style.display == "none") 
+                if (document.getElementById(y).style.display == "none")
                     document.getElementById(y).style.display = "grid";
-                else 
+                else
                     document.getElementById(y).style.display = "none";
             })
         }
 
-        chooseFilter('category','list-category');
-        chooseFilter('status','list-status');
-        chooseFilter('movie','list-movie');
-        chooseFilter('sort','list-sort');
-        
+        chooseFilter('category', 'list-category');
+        chooseFilter('status', 'list-status');
+        chooseFilter('movie', 'list-movie');
+        chooseFilter('sort', 'list-sort');
+
         //https://cors-anywhere.herokuapp.com/https://motphimz.000webhostapp.com/assets/js/category.json
 
-        $.getJSON("https://motphimz.000webhostapp.com/assets/js/category.json", function(data){
+        $.getJSON("https://motphimz.000webhostapp.com/assets/js/category.json", function(data) {
             var items = [];
-            $.each(data, function(key, val){
-              items.push('<li class="dropdown-category-items">' +
-              '<input name="category[]" value="' + val.id + '" type="checkbox" data-cate="'+ val.id + '"><label>' + val.category + '</label></li>');
+            $.each(data, function(key, val) {
+                items.push('<li class="dropdown-category-items">' +
+                    '<input name="category[]" value="' + val.id + '" type="checkbox" data-cate="' + val.id + '"><label>' + val.category + '</label></li>');
             });
             $("#list-category").append(items.join(""));
-          });
+        });
 
-        document.body.addEventListener('click', function(e){
-            if(e.target.id != 'list-category' && e.target.id != 'category') 
+        document.body.addEventListener('click', function(e) {
+            if (e.target.id != 'list-category' && e.target.id != 'category')
                 document.getElementById('list-category').style.display = "none";
 
-            if(e.target.id != 'list-status' && e.target.id != 'status') 
+            if (e.target.id != 'list-status' && e.target.id != 'status')
                 document.getElementById('list-status').style.display = "none";
 
-            if(e.target.id != 'list-movie' && e.target.id != 'movie') 
+            if (e.target.id != 'list-movie' && e.target.id != 'movie')
                 document.getElementById('list-movie').style.display = "none";
 
-            if(e.target.id != 'list-sort' && e.target.id != 'sort') 
+            if (e.target.id != 'list-sort' && e.target.id != 'sort')
                 document.getElementById('list-sort').style.display = "none";
         })
-        
+
     }
 
-    if(number == 2) {
+    if (number == 2) {
 
         //Trang tìm kiếm
 
         const urlParams = new URLSearchParams(window.location.search);
         const q = urlParams.get('q');
-        if(q==""||q==null) {
-            window.location.href="./index.html";
+        if (q == "" || q == null) {
+            window.location.href = "./index.html";
         }
         document.getElementById("result-search").innerHTML = q;
 
 
     }
 
-    if(number == 3) {
+    if (number == 3) {
 
         //Trang xem phim
 
@@ -106,12 +105,12 @@ function orther(number) {
 
         lightdark.addEventListener('click', function() {
 
-            if(darkplayer.style.visibility == "hidden") {
+            if (darkplayer.style.visibility == "hidden") {
                 document.getElementById("darkplayer").style.visibility = "unset";
                 document.getElementById("darkplayer").style.backgroundColor = "rgba(0, 0, 0, 0.6)";
                 document.getElementById("player-embed").style.zIndex = "99999";
                 lightdark.style.opacity = "100%";
-            }else {
+            } else {
                 document.getElementById("player-embed").style.zIndex = "0";
                 document.getElementById("darkplayer").style.visibility = "hidden";
                 document.getElementById("darkplayer").style.backgroundColor = "transparent";

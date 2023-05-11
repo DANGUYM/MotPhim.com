@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="vi" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-layout-style="default" data-layout-mode="dark" data-layout-width="fluid" data-layout-position="fixed">
+
+<head>
+    <title>MotPhim Admin</title>
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MotPhim Admin">
+    <!-- END META -->
+    <!-- BEGIN STYLESHEETS -->
+    <meta name="csrf-token" content="86oVxuoi5NgjC2NQnjUSQyonNWPhlYyFTuc2BkW5">
+    <link rel="shortcut icon" href="../assets/img/ico.png" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/jsvectormap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- JS -->
+    <script src="js/layout.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="https://pictogrammers.github.io/@mdi/font/5.4.55/css/materialdesignicons.min.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="css/app.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.min.css">
+    <!-- Nạp dữ liệu -->
+    <script src="../assets/js/data-film.js"></script>
+    <script src="../assets/js/data-video.js"></script>
+    <script src="../assets/js/data-users.js"></script>
+    <script src="../assets/js/data-comment.js"></script>
+</head>
+
+<body>
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+                                <span class="hamburger-icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </button>
+                        <!-- App Search-->
+                        <form class="app-search d-none d-md-block" action="/films/search">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Search..." id="search-options" value="" name="q">
+                                <span class="mdi mdi-magnify search-widget-icon"></span>
+                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="bx bx-search fs-22"></i>
+                                </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3" action="/films/search">
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Search ..." name="q">
+                                            <button class="btn btn-primary" type="submit">
+                                                    <i class="mdi mdi-magnify"></i>
+                                                </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="dropdown ms-1 topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-plus"></i>
+                                </button>
+                            <div class="dropdown-menu dropdown-menu-end" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 58px, 0px);">
+                                <a href="films/create.html" class="dropdown-item notify-item py-2">
+                                    <i class="ri-add-line"></i>
+                                    <span class="align-middle">Thêm phim</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="d-flex align-items-center">
+                                        <img class="rounded-circle header-profile-user" src="https://i.imgur.com/KbqwIdO.jpg" id="useravatar" alt="Header Avatar">
+                                        <span class="text-start ms-xl-2">
+                                            <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text" id="username">khangdora</span>
+                                            <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Admin</span>
+                                        </span>
+                                    </span>
+                                </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header" id="displayname">Welcome Võ Trường Khang!</h6>
+                                <a class="dropdown-item" href="../index.html">
+                                    <i class="mdi mdi-home-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Ra trang chủ</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#!" onclick="logout()">
+                                    <i class="bx bx-power-off font-size-16 align-middle me-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="../admin/index.html" class="logo logo-light">
+                    <span>
+                            <img src="../assets/img/logo_white.png" alt="" height="30">
+                        </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                        <i class="mdi mdi-record-circle-outline"></i>
+                    </button>
+            </div>
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title">
+                            <span>Quản lý MotPhim</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link  active " href="index.html">
+                                <i class="mdi mdi-view-dashboard"></i>
+                                <span>Tổng Quan</span>
+                            </a>
+                        </li>
+                        <!-- end Dashboard Menu -->
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="users.html">
+                                <i class="mdi mdi-account-circle-outline"></i>
+                                <span>Người dùng</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="films.html">
+                                <i class="mdi mdi-filmstrip"></i>
+                                <span>Phim</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="comments.html">
+                                <i class="mdi mdi-comment"></i>
+                                <span>Bình luận</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col">
+                            <div class="h-100">
+                                <div class="row">
+                                    <div class="col-xl-3 col-md-3 col-sm-3 col-6">
+                                        <!-- card -->
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                                            Online
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-end justify-content-between mt-4">
+                                                    <div>
+                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                            <span class="counter-value" data-target="345">0</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="avatar-sm flex-shrink-0">
+                                                        <span class="avatar-title bg-soft-success rounded fs-3">
+                                                                <i class="mdi mdi-eye"></i>
+                                                            </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                        <!-- end card -->
+                                    </div>
+                                    <!-- end col -->
+                                    <div class="col-xl-3 col-md-3 col-sm-3 col-6">
+                                        <!-- card -->
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                                            Phim
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-end justify-content-between mt-4">
+                                                    <div>
+                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                            <span class="counter-value" data-target="2274">0</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="avatar-sm flex-shrink-0">
+                                                        <span class="avatar-title bg-soft-info rounded fs-3">
+                                                                <i class="mdi mdi-filmstrip"></i>
+                                                            </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                        <!-- end card -->
+                                    </div>
+                                    <!-- end col -->
+                                    <div class="col-xl-3 col-md-3 col-sm-3 col-6">
+                                        <!-- card -->
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                                            Người dùng
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-end justify-content-between mt-4">
+                                                    <div>
+                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                            <span class="counter-value" data-target="109">0</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="avatar-sm flex-shrink-0">
+                                                        <span class="avatar-title bg-soft-warning rounded fs-3">
+                                                                <i class="mdi mdi-account-supervisor-circle-outline"></i>
+                                                            </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                        <!-- end card -->
+                                    </div>
+                                    <!-- end col -->
+                                    <div class="col-xl-3 col-md-3 col-sm-3 col-6">
+                                        <!-- card -->
+                                        <div class="card card-animate">
+                                            <div class="card-body">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1 overflow-hidden">
+                                                        <p class="text-uppercase fw-medium text-muted text-truncate mb-0">
+                                                            Bình luận
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex align-items-end justify-content-between mt-4">
+                                                    <div>
+                                                        <h4 class="fs-22 fw-semibold ff-secondary mb-4">
+                                                            <span class="counter-value" data-target="10">0</span>
+                                                        </h4>
+                                                    </div>
+                                                    <div class="avatar-sm flex-shrink-0">
+                                                        <span class="avatar-title bg-soft-primary rounded fs-3">
+                                                                <i class="mdi mdi-comment-outline"></i>
+                                                            </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                        <!-- end card -->
+                                    </div>
+                                    <!-- end col -->
+                                </div>
+                                <!-- end row-->
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="card">
+                                            <div class="card-header border-0 align-items-center d-flex">
+                                                <h4 class="card-title mb-0 flex-grow-1">Thống Kê</h4>
+                                                <small>30 ngày gần nhất</small>
+                                            </div>
+                                            <!-- end card header -->
+                                            <div class="card-body p-0 pb-2">
+                                                <div class="w-100">
+                                                    <div id="area_chart_spline" data-colors='["--vz-danger", "--vz-success", "--vz-info", "--vz-warning", "--vz-primary", "--vz-light"]' class="apex-charts"></div>
+                                                </div>
+                                            </div>
+                                            <!-- end card body -->
+                                        </div>
+                                        <!-- end card -->
+                                    </div>
+                                    <!-- end col -->
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-4 col-xl-4">
+                                        <div class="card">
+                                            <div class="card-header align-items-center d-flex">
+                                                <h4 class="card-title mb-0 flex-grow-1">Top Ngày</h4>
+                                            </div>
+                                            <!-- end card header -->
+                                            <div class="card-body">
+                                                <div class="table-card">
+                                                    <table class="table table-hover table-centered align-middle mb-0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/3gx2PwJ.png" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                Kimetsu no Yaiba
+                                                                            </h5>
+                                                                            <span class="text-muted">16,006 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/6aSNE9c.png" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta
+                                                                            </h5>
+                                                                            <span class="text-muted">9,316 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/0WwUWVf.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                Mashle
+                                                                            </h5>
+                                                                            <span class="text-muted">8,024 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/FhK9STc.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                Dead Mount Death Play
+                                                                            </h5>
+                                                                            <span class="text-muted">7,003 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/H4DoovF.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                Jigokuraku
+                                                                            </h5>
+                                                                            <span class="text-muted">6,798 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/5XuQZNG.png" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                [Lồng Tiếng] Kimetsu no Yaiba
+                                                                            </h5>
+                                                                            <span class="text-muted">5,060 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/Gye9UiA.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                Skip to Loafer
+                                                                            </h5>
+                                                                            <span class="text-muted">4,925 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/qnNjjAG.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                Tensei Kizoku no Isekai Boukenroku: Jichou wo Shiranai Kamigami no Shito
+                                                                            </h5>
+                                                                            <span class="text-muted">4,116 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/LpYtFKH.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                Blue Lock
+                                                                            </h5>
+                                                                            <span class="text-muted">4,086 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/QNbrB52.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1">
+                                                                                Thám Tử Lừng Danh Conan
+                                                                            </h5>
+                                                                            <span class="text-muted">3,815 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-xl-4">
+                                        <div class="card card-height-100">
+                                            <div class="card-header align-items-center d-flex">
+                                                <h4 class="card-title mb-0 flex-grow-1">Top Tuần</h4>
+                                            </div>
+                                            <!-- end card header -->
+                                            <div class="card-body">
+                                                <div class="table-card">
+                                                    <table class="table table-centered table-hover align-middle mb-0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/3gx2PwJ.png" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Kimetsu no Yaiba
+                                                                            </h5>
+                                                                            <span class="text-muted">144,710 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/H4DoovF.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Jigokuraku
+                                                                            </h5>
+                                                                            <span class="text-muted">70,297 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/0WwUWVf.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Mashle
+                                                                            </h5>
+                                                                            <span class="text-muted">55,352 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/6aSNE9c.png" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta
+                                                                            </h5>
+                                                                            <span class="text-muted">38,041 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/qnNjjAG.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Tensei Kizoku no Isekai Boukenroku: Jichou wo Shiranai Kamigami no Shito
+                                                                            </h5>
+                                                                            <span class="text-muted">37,929 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/FhK9STc.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Dead Mount Death Play
+                                                                            </h5>
+                                                                            <span class="text-muted">25,397 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/XjnwS91.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Yamada-kun to Lv999 no Koi wo Suru
+                                                                            </h5>
+                                                                            <span class="text-muted">24,518 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/VWMLoyZ.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Isekai Shoukan wa Nidome desu
+                                                                            </h5>
+                                                                            <span class="text-muted">23,614 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/5XuQZNG.png" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                [Lồng Tiếng] Kimetsu no Yaiba
+                                                                            </h5>
+                                                                            <span class="text-muted">22,261 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/LpYtFKH.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Blue Lock
+                                                                            </h5>
+                                                                            <span class="text-muted">19,674 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- end table -->
+                                                </div>
+                                            </div>
+                                            <!-- .card-body-->
+                                        </div>
+                                        <!-- .card-->
+                                    </div>
+                                    <!-- .col-->
+                                    <div class="col-md-4 col-xl-4">
+                                        <div class="card card-height-100">
+                                            <div class="card-header align-items-center d-flex">
+                                                <h4 class="card-title mb-0 flex-grow-1">Top Tháng</h4>
+                                            </div>
+                                            <!-- end card header -->
+                                            <div class="card-body">
+                                                <div class="table-card">
+                                                    <table class="table table-centered table-hover align-middle mb-0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/3gx2PwJ.png" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Kimetsu no Yaiba
+                                                                            </h5>
+                                                                            <span class="text-muted">309,336 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/0WwUWVf.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Mashle
+                                                                            </h5>
+                                                                            <span class="text-muted">175,119 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/H4DoovF.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Jigokuraku
+                                                                            </h5>
+                                                                            <span class="text-muted">139,629 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/6aSNE9c.png" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Isekai de Cheat Skill wo Te ni Shita Ore wa, Genjitsu Sekai wo mo Musou Suru: Level Up wa Jinsei wo Kaeta
+                                                                            </h5>
+                                                                            <span class="text-muted">91,489 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/qnNjjAG.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Tensei Kizoku no Isekai Boukenroku: Jichou wo Shiranai Kamigami no Shito
+                                                                            </h5>
+                                                                            <span class="text-muted">75,423 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/5XuQZNG.png" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                [Lồng Tiếng] Kimetsu no Yaiba
+                                                                            </h5>
+                                                                            <span class="text-muted">70,706 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/FhK9STc.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Dead Mount Death Play
+                                                                            </h5>
+                                                                            <span class="text-muted">65,152 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/OOJpFvd.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                &quot;Oshi no Ko&quot;
+                                                                            </h5>
+                                                                            <span class="text-muted">62,873 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/gRSdLlL.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Conan The Movie
+                                                                            </h5>
+                                                                            <span class="text-muted">62,031 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="d-flex align-items-center">
+                                                                        <div class="avatar-sm bg-light rounded p-1 me-2 flex-shrink-0">
+                                                                            <img src="https://i.imgur.com/LpYtFKH.jpg" alt="" class="img-fluid d-block" style="height: 100%;">
+                                                                        </div>
+                                                                        <div>
+                                                                            <h5 class="fs-14 my-1 fw-medium">
+                                                                                Blue Lock
+                                                                            </h5>
+                                                                            <span class="text-muted">60,847 xem</span>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <!-- end -->
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- end table -->
+                                                </div>
+                                            </div>
+                                            <!-- .card-body-->
+                                        </div>
+                                        <!-- .card-->
+                                    </div>
+                                    <!-- .col-->
+                                </div>
+                                <!-- end row-->
+                            </div>
+                            <!-- end .h-100-->
+                        </div>
+                        <!-- end col -->
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            © MotPhim.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block"></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!--start back-to-top-->
+        <button onclick="topFunction()" class="btn btn-danger btn-icon hidden" id="back-to-top">
+                <i class="mdi mdi-arrow-up"></i>
+        </button>
+
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/simplebar.min.js"></script>
+        <script src="js/node-waves.min.js"></script>
+        <script src="js/feather-icons.min.js"></script>
+        <script src="js/lord-icon-2.1.0.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/app.min.js"></script>
+        <script src="js/sweetalert.min.js"></script>
+        <script src="js/load.js"></script>
+
+        <script type="text/javascript">
+            function removeSlow(element, time) {
+                time = typeof time !== 'undefined' ? time : 700;
+                element.fadeOut(time, function() {
+                    $(this).remove();
+                });
+            }
+
+            function notifyWhat(type, text, seconds, position) {
+                if (type == 's') {
+                    type = 'bg-success';
+                } else if (type == 'e') {
+                    type = 'bg-danger';
+                    if (!text) {
+                        text = 'Lỗi nha!';
+                    }
+                } else if (type == 'w') {
+                    type = 'bg-warning';
+                }
+                if (!seconds) {
+                    seconds = 3;
+                }
+                if (!position) {
+                    position = 'center';
+                }
+                Toastify({
+                    text: text,
+                    className: type,
+                    duration: seconds * 1000,
+                    position: position
+                }).showToast();
+            }
+            // // tooltip
+            // var tooltipTriggerList = [].slice.call(
+            //     document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            // );
+            // tooltipTriggerList.map(function (tooltipTriggerEl) {
+            //     return new bootstrap.Tooltip(tooltipTriggerEl);
+            // });
+
+            var tooltipTriggerList = [].slice.call(
+                document.querySelectorAll('[rel="tooltip"]')
+            );
+            tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // // popover
+            // var popoverTriggerList = [].slice.call(
+            //     document.querySelectorAll('[data-bs-toggle="popover"]')
+            // );
+            // popoverTriggerList.map(function (popoverTriggerEl) {
+            //     return new bootstrap.Popover(popoverTriggerEl);
+            // });
+        </script>
+        <script type="text/javascript">
+            $('.clear-cache').click(function() {
+                var type = $(this).attr('data-cache-type');
+
+                $.ajax({
+                    type: "delete",
+                    url: "/cache",
+                    data: {
+                        type: type
+                    },
+                    success: function(data) {
+                        notifyWhat('s', 'Xong');
+                    },
+                    error: function() {
+                        notifyWhat('e', 'Lỗi');
+                    }
+                });
+            });
+        </script>
+        <script src="js/apexcharts.min.js"></script>
+        <!-- apexcharts -->
+        <!-- dashboard init -->
+        <script src="js/dashboard.js"></script>
+        <script type="text/javascript">
+            function kFormatter(num) {
+                return Math.abs(num) > 999 ? Math.sign(num) * ((Math.abs(num) / 1000).toFixed(1)) + 'k' : Math.sign(num) * Math.abs(num)
+            }
+
+            // line stacked charts
+            var areachartSplineColors = getChartColorsArray("area_chart_spline");
+
+            if (areachartSplineColors) {
+                var options = {
+                    series: [{
+                        name: 'Lượt xem trang',
+                        data: [571811, 526877, 549742, 538863, 622844, 777546, 608271, 565938, 526983, 541932, 521345, 618881, 757714, 639088, 574202, 509732, 517702, 500164, 651395, 620130, 636005, 541588, 467088, 386695, 377985, 446771, 536626, 465085, 385263, ]
+                    }, {
+                        name: 'Phiên làm việc',
+                        data: [199365, 194481, 201365, 198288, 216213, 260642, 217822, 199638, 192116, 194819, 190977, 217474, 262266, 231573, 208331, 190645, 194099, 189401, 231402, 210048, 220384, 185282, 154146, 131783, 135042, 154112, 180021, 166695, 137009, ]
+                    }, {
+                        name: 'Khách truy cập',
+                        data: [127000, 125532, 130744, 130118, 138300, 162351, 137080, 128197, 122633, 126370, 124532, 139163, 163682, 145230, 131576, 124481, 124919, 133890, 142997, 124653, 136295, 110014, 95569, 83749, 83011, 93373, 103682, 101483, 84170, ]
+                    }],
+                    chart: {
+                        height: 350,
+                        type: 'area',
+                        stacked: false,
+                        toolbar: {
+                            show: true
+                        }
+                    },
+                    dataLabels: {
+                        enabled: false
+                    },
+                    stroke: {
+                        curve: 'smooth'
+                    },
+                    colors: areachartSplineColors,
+                    xaxis: {
+                        labels: {
+                            formatter: function(value) {
+                                return value ? value.substring(0, 5) : '';
+                            }
+                        },
+                        categories: ['11/04/2023', '12/04/2023', '13/04/2023', '14/04/2023', '15/04/2023', '16/04/2023', '17/04/2023', '18/04/2023', '19/04/2023', '20/04/2023', '21/04/2023', '22/04/2023', '23/04/2023', '24/04/2023', '25/04/2023', '26/04/2023', '27/04/2023', '28/04/2023', '29/04/2023', '30/04/2023', '01/05/2023', '02/05/2023', '03/05/2023', '04/05/2023', '05/05/2023', '06/05/2023', '07/05/2023', '08/05/2023', '09/05/2023', ]
+                    },
+                    yaxis: {
+                        labels: {
+                            formatter: function(value) {
+                                return value ? kFormatter(value) : '';
+                            }
+                        }
+                    },
+                    tooltip: {
+                        x: {
+                            format: 'dd/MM/yy'
+                        }
+                    }
+                }
+                var chart = new ApexCharts(document.querySelector("#area_chart_spline"), options);
+                chart.render();
+            }
+        </script>
+</body>
+
+</html>

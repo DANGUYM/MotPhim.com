@@ -1,5 +1,5 @@
 body {
-    margin:0px;
+    margin: 0px;
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     line-height: 1.428571429;
@@ -7,7 +7,7 @@ body {
 }
 
 * {
-    color:#bbb;
+    color: #bbb;
 }
 
 *::-webkit-scrollbar {
@@ -26,14 +26,16 @@ body {
 }
 
 .user-avatar {
-    background: rgba(0,0,0,.25);
+    background: rgba(0, 0, 0, .25);
 }
 
-.tray.collection{
-    background-color:black;
+.tray.collection {
+    background-color: black;
 }
 
-.navbar-user, .navbar-menu, .dropdown-category {
+.navbar-user,
+.navbar-menu,
+.dropdown-category {
     background-color: #000000d1;
 }
 
@@ -55,7 +57,7 @@ body {
     background-color: #070112;
 }
 
-.tray-content-news{
+.tray-content-news {
     background-color: #064050;
 }
 
@@ -65,10 +67,13 @@ body {
 }
 
 .player-type {
-    color:white;
+    color: white;
 }
 
-.player-sidebar-header, .tab-episode-info, .comment-item, .tab-input-comment {
+.player-sidebar-header,
+.tab-episode-info,
+.comment-item,
+.tab-input-comment {
     border-bottom: 1px solid #5c5c5c;
 }
 
@@ -80,10 +85,11 @@ body {
     background: #333;
 }
 
-.footer, .header {
+.footer,
+.header {
     background: black;
 }
 
 .slideshow-infomation {
-    background-image: linear-gradient(180deg,hsla(0,0%,100%,0),rgba(0,0,0,.39) 34%,#070112 87%);
+    background-image: linear-gradient(180deg, hsla(0, 0%, 100%, 0), rgba(0, 0, 0, .39) 34%, #070112 87%);
 }

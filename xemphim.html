@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,36 +8,40 @@
 
     <title>MotPhim.Com - Trang web xem phim số một tại Việt Nam</title>
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta http-equiv="cache-control" content="max-age=0" />
-	<meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
 
-	<meta name="robots" content="index, follow" />
-	<meta name="language" content="Vietnamese" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="Vietnamese" />
 
     <link rel="shortcut icon" href="assets/img/ico.png" type="image/x-icon" />
 
-	<meta name="description" content="Trang xem phim số một Việt Nam, phim mới và phim sớm" />
-	<meta name="keywords" content="phim trung quoc, phim han quoc, phim ngon tinh, anime, vietsub, phim chieu rap" />
+    <meta name="description" content="Trang xem phim số một Việt Nam, phim mới và phim sớm" />
+    <meta name="keywords" content="phim trung quoc, phim han quoc, phim ngon tinh, anime, vietsub, phim chieu rap" />
 
     <!--Meta Facebook-->
     <meta property="og:image" content="https://i.imgur.com/Buvsc7f.png" />
-	<meta property="og:description" content="Trang xem phim số một Việt Nam, phim mới và phim sớm" />
-	<meta property="og:title" content="MotPhim.Com - Trang web xem phim số một tại Việt Nam" />
-	<meta property="og:site_name" content="MotPhim" />
-	<meta property="og:type" content="video.movie" />
+    <meta property="og:description" content="Trang xem phim số một Việt Nam, phim mới và phim sớm" />
+    <meta property="og:title" content="MotPhim.Com - Trang web xem phim số một tại Việt Nam" />
+    <meta property="og:site_name" content="MotPhim" />
+    <meta property="og:type" content="video.movie" />
 
     <!--Meta Google-->
     <meta itemprop="name" content="MotPhim.Com - Trang web xem phim số một tại Việt Nam" />
-	<meta itemprop="description" content="Trang xem phim số một Việt Nam, phim mới và phim sớm" />
-	<meta itemprop="image" content="https://i.imgur.com/Buvsc7f.png" />
+    <meta itemprop="description" content="Trang xem phim số một Việt Nam, phim mới và phim sớm" />
+    <meta itemprop="image" content="https://i.imgur.com/Buvsc7f.png" />
 
+    <!--Lib-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="assets/css/home.css"/>
-    <link rel="stylesheet" id="dark"/>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" id="dark" />
 
 </head>
+
 <body>
     <header class="header">
         <div class="header-container">
@@ -108,9 +113,11 @@
 
     <div class="navbar-user" id="navbar-user" style="right:-300px;">
         <div class="profile">
-            <img class="navbar-user-avatar" id="useravatar" src="https://i.imgur.com/XXIC7OL.jpg"/>
+            <img class="navbar-user-avatar" id="useravatar" src="https://i.imgur.com/XXIC7OL.jpg" />
             <div class="navbar-user-name" id="username">Kamic</div>
-            <div class="navbar-user-point">Số điểm thưởng<p class="number-point" id="userpoint">10.000 KIM CƯƠNG</p></div>
+            <div class="navbar-user-point">Số điểm thưởng
+                <p class="number-point" id="userpoint">10.000 KIM CƯƠNG</p>
+            </div>
             <div class="navbar-user-times" id="remove-user" onclick="removeuser()"><i class="fa fa-times"></i></div>
         </div>
         <div class="user-item admin" id="admin">
@@ -172,7 +179,7 @@
     <div class="container">
 
         <a href="https://blog.onekingslane.com/guest-room-makeover/" target="_blank">
-            <img src="./assets/img/ads/ads2.gif" id="ads" alt="ads2"/>
+            <img src="./assets/img/ads/ads2.gif" id="ads" alt="ads2" />
         </a>
 
         <div class="container-player">
@@ -183,13 +190,16 @@
                         <div class="tool-player" id="lightdark">
                             <i class="fa fa-lightbulb-o"></i>
                         </div>
+                        <!-- <div class="tool-player" id="downloadvideo">
+                            <i class="fa fa-download"></i>
+                        </div> -->
                     </div>
                 </div>
                 <div class="info-film">
                     <div class="film-title" id="filmname">Doraemon Tập 505</div>
                     <div class="film-other">
                         <div class="film-views-date">
-                            <span id="filmviews">318.291</span> lượt xem • 
+                            <span id="filmviews">318.291</span> lượt xem •
                             <span id="filmdate">14 thg 10 năm 2023</span>
                         </div>
                         <div class="film-tool">
@@ -220,14 +230,14 @@
                         <div class="tab-episode-select">Tập <input type="number" id="quickSearch" min="1" max="746" value="505"></div>
                     </div>
                     <div class="tab-episode-list" id="listvideo">
-                        
+
                         <div class="episode-item">
                             <a class="episode-item-content">
                                 <div class="episode-item-thumbnai">
                                     <img src="https://www.tv-asahi.co.jp/doraemon_2017/story/0746/images/NUwQcVUQGN.jpg">
                                 </div>
                                 <div class="episode-item-meta">
-                                    <div class="episode-item-title">Tập 746  - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
+                                    <div class="episode-item-title">Tập 746 - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
                                     <div class="episode-item-views">278,219 lượt xem</div>
                                 </div>
                             </a>
@@ -239,7 +249,7 @@
                                     <img src="https://www.tv-asahi.co.jp/doraemon_2017/story/0746/images/NUwQcVUQGN.jpg">
                                 </div>
                                 <div class="episode-item-meta">
-                                    <div class="episode-item-title">Tập 746  - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
+                                    <div class="episode-item-title">Tập 746 - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
                                     <div class="episode-item-views">278,219 lượt xem</div>
                                 </div>
                             </a>
@@ -251,7 +261,7 @@
                                     <img src="https://www.tv-asahi.co.jp/doraemon_2017/story/0746/images/NUwQcVUQGN.jpg">
                                 </div>
                                 <div class="episode-item-meta">
-                                    <div class="episode-item-title">Tập 746  - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
+                                    <div class="episode-item-title">Tập 746 - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
                                     <div class="episode-item-views">278,219 lượt xem</div>
                                 </div>
                             </a>
@@ -263,7 +273,7 @@
                                     <img src="https://www.tv-asahi.co.jp/doraemon_2017/story/0746/images/NUwQcVUQGN.jpg">
                                 </div>
                                 <div class="episode-item-meta">
-                                    <div class="episode-item-title">Tập 746  - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
+                                    <div class="episode-item-title">Tập 746 - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
                                     <div class="episode-item-views">278,219 lượt xem</div>
                                 </div>
                             </a>
@@ -275,7 +285,7 @@
                                     <img src="https://www.tv-asahi.co.jp/doraemon_2017/story/0746/images/NUwQcVUQGN.jpg">
                                 </div>
                                 <div class="episode-item-meta">
-                                    <div class="episode-item-title">Tập 746  - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
+                                    <div class="episode-item-title">Tập 746 - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
                                     <div class="episode-item-views">278,219 lượt xem</div>
                                 </div>
                             </a>
@@ -287,7 +297,7 @@
                                     <img src="https://www.tv-asahi.co.jp/doraemon_2017/story/0746/images/NUwQcVUQGN.jpg">
                                 </div>
                                 <div class="episode-item-meta">
-                                    <div class="episode-item-title">Tập 746  - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
+                                    <div class="episode-item-title">Tập 746 - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
                                     <div class="episode-item-views">278,219 lượt xem</div>
                                 </div>
                             </a>
@@ -299,7 +309,7 @@
                                     <img src="https://www.tv-asahi.co.jp/doraemon_2017/story/0746/images/NUwQcVUQGN.jpg">
                                 </div>
                                 <div class="episode-item-meta">
-                                    <div class="episode-item-title">Tập 746  - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
+                                    <div class="episode-item-title">Tập 746 - Chiến lược bắt bạch tuộc Nobita & Camera đổi tình thế</div>
                                     <div class="episode-item-views">278,219 lượt xem</div>
                                 </div>
                             </a>
@@ -312,7 +322,7 @@
                     <div class="tab-input-comment">
                         <textarea name="comment" id="comment" placeholder="Nhập bình luận"></textarea>
                         <div class="btn-submit-comment">
-                            <input type="button" id="submitButton" value="Đăng"/>
+                            <input type="button" id="submitButton" value="Đăng" />
                         </div>
                     </div>
                     <div class="tab-list-comment">
@@ -426,7 +436,7 @@
 
             <div class="player-main infomation-film">
                 <div class="infomation-film-thumbnai" id="phimthumbnail">
-                    <img src="./assets/img/film/film9.jpg" alt="Doraemon"/>
+                    <img src="./assets/img/film/film9.jpg" alt="Doraemon" />
                 </div>
                 <div class="infomation-film-meta">
                     <div class="infomation-film-category" id="phimcategory">
@@ -440,12 +450,13 @@
                         <span class="country-item" id="phimcountry">Nhật Bản</span>
                     </div>
                     <div class="infomation-film-description" id="phimdescription">
-                        Bộ phim kể về một chú mèo máy tên là Doraemon đến từ thế kỉ 22 để giúp một cậu bé lớp 4 hậu đậu tên là Nobi Nobita. Các câu chuyện của Doraemon thường ngắn gọn, dễ hiểu, dí dỏm và mang cái nhìn lạc quan về cuộc sống tương lai cũng như sự phát triển của khoa học - kĩ thuật.
+                        Bộ phim kể về một chú mèo máy tên là Doraemon đến từ thế kỉ 22 để giúp một cậu bé lớp 4 hậu đậu tên là Nobi Nobita. Các câu chuyện của Doraemon thường ngắn gọn, dễ hiểu, dí dỏm và mang cái nhìn lạc quan về cuộc sống tương lai cũng như sự phát triển của
+                        khoa học - kĩ thuật.
                     </div>
                 </div>
             </div>
 
-            
+
         </div>
 
         <selection class="tray" id="filminvid">
@@ -472,7 +483,7 @@
                         <div class="tray-item-audio">Nhật Bản</div>
                     </a>
                 </div>
-                
+
                 <div class="tray-item">
                     <a href="./lat-mat-48h">
                         <img class="tray-item-thumbnail" src="assets/img/film/film17.jpg" alt="Lật mặt 48h">
@@ -580,24 +591,22 @@
                     <div class="vertical">
                         <div class="footer-title color-ccc">Quy định</div>
                         <a href="./dieu-khoan-su-dung.html" class="color-ccc">Điều khoản sử dụng</a>
-                        <a href="./chinh-sach-rieng-tu.html"  class="color-ccc">Chính sách riêng tư</a>
-                        <a href="./chinh-sach-quyen-so-huu-tri-tue.html"  class="color-ccc">Chính sách quyền sở hữu trí tuệ</a>
-                        <a href="./chinh-sach-khac.html"  class="color-ccc">Chính sách khác</a>
+                        <a href="./chinh-sach-rieng-tu.html" class="color-ccc">Chính sách riêng tư</a>
+                        <a href="./chinh-sach-quyen-so-huu-tri-tue.html" class="color-ccc">Chính sách quyền sở hữu trí tuệ</a>
+                        <a href="./chinh-sach-khac.html" class="color-ccc">Chính sách khác</a>
                     </div>
                     <div class="vertical">
                         <div class="footer-title color-ccc">Hỗ trợ</div>
                         <a href="./help-center.html" class="color-ccc">Trung tâm hỗ trợ</a>
-                        <a href="./cau-hoi-thuong-gap.html"  class="color-ccc">Câu hỏi thường gặp</a>
-                        <a href="./lien-he.html"  class="color-ccc">Liên hệ</a>
-                        <a href=""  class="color-ccc" target="_blank">Góp ý</a>
+                        <a href="./cau-hoi-thuong-gap.html" class="color-ccc">Câu hỏi thường gặp</a>
+                        <a href="./lien-he.html" class="color-ccc">Liên hệ</a>
+                        <a href="" class="color-ccc" target="_blank">Góp ý</a>
                     </div>
                 </div>
             </div>
             <div class="footer-top-container">
                 <div class="footer-top-content color-ccc" id="company">
-                    Trường ĐH Công nghiệp Tp. Hồ Chí Minh - Địa chỉ: 12 Nguyễn Văn Bảo, Phường IV, Quận Gò Vấp, Thành phố Hồ Chí Minh.<br>
-                    Email: 123@gmail.com<br>
-                    Giấy phép Cung cấp Dịch vụ Phát thanh, Truyền hình trả tiền số 192/GP_BTTTT cấp ngày 07/05/2020.
+                    Trường ĐH Công nghiệp Tp. Hồ Chí Minh - Địa chỉ: 12 Nguyễn Văn Bảo, Phường IV, Quận Gò Vấp, Thành phố Hồ Chí Minh.<br> Email: 123@gmail.com<br> Giấy phép Cung cấp Dịch vụ Phát thanh, Truyền hình trả tiền số 192/GP_BTTTT cấp ngày 07/05/2020.
                 </div>
             </div>
         </div>
@@ -636,4 +645,5 @@
     </script>
 
 </body>
+
 </html>

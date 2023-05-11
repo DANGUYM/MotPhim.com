@@ -15,23 +15,19 @@ var change_theme = document.getElementById('change-theme');
 // tài khoản 2 uservip / 123456 / tài khoản vip
 // tài khoản 3 admin / 123456 / tài khoản quản trị
 
-if (localStorage.hasOwnProperty("codeuser")) {
+if (localStorage.hasOwnProperty("userlogin")) {
 
-    var codeuser = localStorage.getItem("codeuser");
-    if (codeuser === "1239snka21") {
-        document.getElementById("userpoint").innerHTML = "0 KIM CƯƠNG";
-        document.getElementById("username").innerHTML = "Tài khoản nghèo";
+    var userloginString = localStorage.getItem("userlogin");
+    var userlogin = JSON.parse(userloginString);
+
+    document.getElementById("userpoint").innerHTML = Math.round(userlogin.coin).toLocaleString() + " KIM CƯƠNG";
+    document.getElementById("username").innerHTML = userlogin.displayname;
+    document.getElementById("useravatar").src = userlogin.avatar;
+    if (userlogin.permission == 0) {
         document.getElementById("useravatar").style.borderColor = "#ccc";
-    }
-
-    if (codeuser === "20sj1n28s4") {
-        document.getElementById("username").innerHTML = "Tài khoản xịn";
+    } else if (userlogin.permission == 1) {
         noads();
-    }
-
-    if (codeuser === "39927dnss3") {
-        document.getElementById("userpoint").innerHTML = "VÔ CỰC KIM CƯƠNG";
-        document.getElementById("username").innerHTML = "Quản trị viên";
+    } else if (userlogin.permission == 2) {
         document.getElementById("useravatar").style.borderColor = "#d60000";
         document.getElementById("admin").style.display = "block";
         noads();
@@ -49,7 +45,7 @@ function noads() {
 }
 
 function logout() {
-    localStorage.removeItem("codeuser");
+    localStorage.removeItem("userlogin");
     location.reload();
 }
 
@@ -57,22 +53,28 @@ function submitlogin() {
     var password = document.getElementById("password").value;
     var username = document.getElementById("username").value;
 
-    if (username === "usernormal" && password === "123456") {
-        localStorage.setItem("codeuser", "1239snka21");
-        location.reload();
-        return;
+    if (typeof dsusers !== 'undefined') {
+        document.getElementById("result").innerHTML = "Lỗi kết nối cơ sở dữ liệu.";
     }
-    if (username === "uservip" && password === "123456") {
-        localStorage.setItem("codeuser", "20sj1n28s4");
-        location.reload();
-        return;
-    }
-    if (username === "admin" && password === "123456") {
-        localStorage.setItem("codeuser", "39927dnss3");
-        location.reload();
-        return;
-    }
-    document.getElementById("result").innerHTML = "Đăng nhập không thành công";
+
+    $.each(dsusers, function(index, user) {
+        if (user.username === username && user.password === password) {
+            let userlogin = {
+                id: user.id,
+                username: user.username,
+                displayname: user.displayname,
+                password: user.password,
+                coin: user.coin,
+                avatar: user.avatar,
+                permission: user.permission
+            }
+            localStorage.setItem("userlogin", JSON.stringify(userlogin));
+            location.reload();
+            return;
+        } else {
+            document.getElementById("result").innerHTML = "Tên đăng nhập hoặc mật khẩu không chính xác.";
+        }
+    })
 
 }
 
