@@ -64,7 +64,7 @@ let video6 = {
     tap: 2,
     tenvideo: "Tháp Fangs",
     luotxem: 4738,
-    linkframe: "https://drive.google.com/file/d/1lugyF-HoGlFpbKntyTbMg2ydp65K3kO_/preview",
+    linkframe: "https://drive.google.com/file/d/1lugyF-HoGlFpbKntyTbMg2ydp65K3kO_/preview", //https://short.ink/MaL4Ty3U_
     thumbnai: "https://i.imgur.com/91ZXHbM.png",
     ngaydang: "19 thg 1 năm 2021",
     downloadlink: ""

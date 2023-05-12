@@ -4998,7 +4998,6 @@ fieldset:disabled .btn {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
-    margin-bottom: 1rem;
     list-style: none
 }
 

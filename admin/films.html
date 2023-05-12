@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-layout-style="default" data-layout-mode="dark" data-layout-width="fluid" data-layout-position="fixed">
+
+<head>
+    <title>MotPhim Admin</title>
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MotPhim Admin">
+    <!-- END META -->
+    <!-- BEGIN STYLESHEETS -->
+    <meta name="csrf-token" content="86oVxuoi5NgjC2NQnjUSQyonNWPhlYyFTuc2BkW5">
+    <link rel="shortcut icon" href="../assets/img/ico.png" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/jsvectormap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- JS -->
+    <script src="js/layout.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="https://pictogrammers.github.io/@mdi/font/5.4.55/css/materialdesignicons.min.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="css/app.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.min.css">
+    <!-- Nạp dữ liệu -->
+    <script src="../assets/js/data-film.js"></script>
+    <script src="../assets/js/data-video.js"></script>
+    <script src="../assets/js/data-users.js"></script>
+    <script src="../assets/js/data-comment.js"></script>
+</head>
+
+<body>
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+                                <span class="hamburger-icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </button>
+                        <!-- App Search-->
+                        <form class="app-search d-none d-md-block" action="/films/search">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Search..." id="search-options" value="" name="q">
+                                <span class="mdi mdi-magnify search-widget-icon"></span>
+                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3" action>
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Tìm kiếm..." name="q">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="dropdown ms-1 topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-plus"></i>
+                                </button>
+                            <div class="dropdown-menu dropdown-menu-end" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 58px, 0px);">
+                                <a href="films/create.html" class="dropdown-item notify-item py-2">
+                                    <i class="ri-add-line"></i>
+                                    <span class="align-middle">Thêm phim</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="d-flex align-items-center">
+                                        <img
+                                            class="rounded-circle header-profile-user"
+                                            src="https://i.imgur.com/KbqwIdO.jpg"
+                                            id="useravatar"
+                                            alt="Header Avatar"
+                                        >
+                                        <span class="text-start ms-xl-2">
+                                            <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text" id="username">khangdora</span>
+                                            <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Admin</span>
+                                        </span>
+                                    </span>
+                                </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header" id="displayname">Welcome Võ Trường Khang!</h6>
+                                <a class="dropdown-item" href="../index.html">
+                                    <i class="mdi mdi-home-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Ra trang chủ</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#!" onclick="logout()">
+                                    <i class="bx bx-power-off font-size-16 align-middle me-1"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="../admin/index.html" class="logo logo-light">
+                    <span>
+                            <img src="../assets/img/logo_white.png" alt="" height="30">
+                        </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                        <i class="mdi mdi-record-circle-outline"></i>
+                    </button>
+            </div>
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title">
+                            <span>Quản lý MotPhim</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="index.html">
+                                <i class="mdi mdi-view-dashboard"></i>
+                                <span>Tổng Quan</span>
+                            </a>
+                        </li>
+                        <!-- end Dashboard Menu -->
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="users.html">
+                                <i class="mdi mdi-account-circle-outline"></i>
+                                <span>Người dùng</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="films.html">
+                                <i class="mdi mdi-filmstrip"></i>
+                                <span>Phim</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="comments.html">
+                                <i class="mdi mdi-comment"></i>
+                                <span>Bình luận</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+                    <div class="card d-flex">
+                        <div class="card-body">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="index.html">Home</a>
+                                </li>
+                                <li class="breadcrumb-item active">Anime</li>
+                                <div class="box-tool dropdown">
+                                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#!">Sắp chiếu</a>
+                                        <a class="dropdown-item" href="#!">Điện ảnh</a>
+                                        <a class="dropdown-item" href="#!">Đang ẩn</a>
+                                    </div>
+                                </div>
+                            </ol>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th class="hidden-xs" style="width: 50px;">Ảnh</th>
+                                            <th style="max-width: 600px;">Tên phim</th>
+                                            <th class="text-end hidden-xs">Lượt xem</th>
+                                            <th class="text-center hidden-xs hidden-sm">Thời lượng</th>
+                                            <th class="text-end" style="width: 90px;">Công cụ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="list-films">
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="preview-thumbnail" class="modal fade" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content box-shadow-md black lt m-b">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"></h5>
+                                </div>
+                                <div class="modal-body text-center p-lg"></div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-light p-x-md" data-bs-dismiss="modal">Đóng</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--  Extra Large modal example -->
+                    <div id="m-upload-img" class="modal fade m-upload-img" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="myExtraLargeModalLabel"></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-lg-8 mb-2">
+                                            <input id="thumbnail-url" type="text" name="thumbnail" class="form-control" placeholder="Url hình ngang">
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <button id="thumbnail-url-submit" class="btn btn-success form-control">
+                                                    <i class="ri-upload-line me-1 align-middle"></i>
+                                                    upload URL
+                                                </button>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <form action id="form-upload-img" enctype="multipart/form-data" method="post">
+                                        <input type="hidden" name="_token" value="lxOChJLSRkSsGdEDnJ41U9Dksqwy11TXqXMB3Lij">
+                                        <input type="hidden" name="film_id">
+                                        <div class="row fileupload-buttonbar">
+                                            <div class="col-lg-10">
+                                                <!-- The fileinput-button span is used to style the file input field as button -->
+                                                <span class="btn btn-label btn-primary rounded-pill fileinput-button">
+                                                        <i class="mdi mdi-file-image-outline label-icon"></i>
+                                                        <span>Chọn hình trong máy</span>
+                                                </span>
+                                                <button class="btn btn-label btn-danger rounded-pill clear-tmp-img">
+                                                        <i class="mdi mdi-refresh label-icon"></i>
+                                                        <span>Làm rỗng</span>
+                                                    </button>
+                                                <span class="fileupload-process"></span>
+                                            </div>
+                                        </div>
+                                        <!-- The table listing the files available for upload/download -->
+                                        <table role="presentation" class="table table-striped">
+                                            <tbody class="files"></tbody>
+                                        </table>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <a href="javascript:void(0);" class="btn btn-light fw-medium" data-bs-dismiss="modal">
+                                        Đóng
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <!-- /.modal -->
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            © MotPhim.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block"></div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!--start back-to-top-->
+        <button onclick="topFunction()" class="btn btn-danger btn-icon hidden" id="back-to-top">
+            <i class="mdi mdi-arrow-up"></i>
+        </button>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/simplebar.min.js"></script>
+        <script src="js/node-waves.min.js"></script>
+        <script src="js/feather-icons.min.js"></script>
+        <script src="js/lord-icon-2.1.0.min.js"></script>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/app.min.js"></script>
+        <script src="js/sweetalert.min.js"></script>
+        <script src="js/load.js"></script>
+        <script type="text/javascript">
+            function removeSlow(element, time) {
+                time = typeof time !== 'undefined' ? time : 700;
+                element.fadeOut(time, function() {
+                    $(this).remove();
+                });
+            }
+
+            function notifyWhat(type, text, seconds, position) {
+                if (type == 's') {
+                    type = 'bg-success';
+                } else if (type == 'e') {
+                    type = 'bg-danger';
+                    if (!text) {
+                        text = 'Lỗi nha!';
+                    }
+                } else if (type == 'w') {
+                    type = 'bg-warning';
+                }
+                if (!seconds) {
+                    seconds = 3;
+                }
+                if (!position) {
+                    position = 'center';
+                }
+                Toastify({
+                    text: text,
+                    className: type,
+                    duration: seconds * 1000,
+                    position: position
+                }).showToast();
+            }
+            // // tooltip
+            // var tooltipTriggerList = [].slice.call(
+            //     document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            // );
+            // tooltipTriggerList.map(function (tooltipTriggerEl) {
+            //     return new bootstrap.Tooltip(tooltipTriggerEl);
+            // });
+
+            var tooltipTriggerList = [].slice.call(
+                document.querySelectorAll('[rel="tooltip"]')
+            );
+            tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // // popover
+            // var popoverTriggerList = [].slice.call(
+            //     document.querySelectorAll('[data-bs-toggle="popover"]')
+            // );
+            // popoverTriggerList.map(function (popoverTriggerEl) {
+            //     return new bootstrap.Popover(popoverTriggerEl);
+            // });
+        </script>
+        <script>
+            function setPhim(idphim, idvideo) {
+                localStorage.setItem("idphim", idphim);
+                localStorage.setItem("idvideo", idvideo);
+            }
+        </script>
+</body>
+
+</html>
