@@ -2,7 +2,7 @@
 <html lang="vi" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-layout-style="default" data-layout-mode="dark" data-layout-width="fluid" data-layout-position="fixed">
 
 <head>
-    <title>MotPhim Admin</title>
+    <title>Danh sách bình luận - MotPhim Admin</title>
     <!-- BEGIN META -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,8 +77,7 @@
                                     <i class="mdi mdi-plus"></i>
                                 </button>
                             <div class="dropdown-menu dropdown-menu-end" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 58px, 0px);">
-                                <a href="films/create.html" class="dropdown-item notify-item py-2">
-                                    <i class="ri-add-line"></i>
+                                <a href="create-films.html" class="dropdown-item notify-item py-2">
                                     <span class="align-middle">Thêm phim</span>
                                 </a>
                             </div>
@@ -108,7 +107,7 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-danger" href="#!" onclick="logout()">
                                     <i class="bx bx-power-off font-size-16 align-middle me-1"></i>
-                                    <span>Logout</span>
+                                    <span>Đăng xuất</span>
                                 </a>
                             </div>
                         </div>
@@ -179,15 +178,7 @@
                                 <li class="breadcrumb-item">
                                     <a href="index.html">Home</a>
                                 </li>
-                                <li class="breadcrumb-item active">Anime</li>
-                                <div class="box-tool dropdown">
-                                    <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false"></button>
-                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                        <a class="dropdown-item" href="#!">Sắp chiếu</a>
-                                        <a class="dropdown-item" href="#!">Điện ảnh</a>
-                                        <a class="dropdown-item" href="#!">Đang ẩn</a>
-                                    </div>
-                                </div>
+                                <li class="breadcrumb-item active">Bình luận</li>
                             </ol>
                         </div>
                     </div>
@@ -197,14 +188,16 @@
                                 <table class="table table-hover">
                                     <thead>
                                         <tr>
-                                            <th class="hidden-xs" style="width: 50px;">Ảnh</th>
-                                            <th style="max-width: 600px;">Tên phim</th>
-                                            <th class="text-end hidden-xs">Lượt xem</th>
-                                            <th class="text-center hidden-xs hidden-sm">Thời lượng</th>
-                                            <th class="text-end" style="width: 90px;">Công cụ</th>
+                                            <th style="width: 68px;" class="hidden-xs text-center">Avatar</th>
+                                            <th style="width: 165px;" class="hidden-xs">Tên</th>
+                                            <th style="width: 430px;" class="">Nội dung</th>
+                                            <th style="width: 125px;" class="text-center hidden-xs hidden-sm">Thời gian</th>
+                                            <th class="text-center hidden-xs">Phim</th>
+                                            <th class="text-center">Ẩn</th>
+                                            <th class="text-end">Công cụ</th>
                                         </tr>
                                     </thead>
-                                    <tbody id="list-films">
+                                    <tbody id="list-comment">
                                     </tbody>
                                 </table>
                             </div>
@@ -300,7 +293,89 @@
         <button onclick="topFunction()" class="btn btn-danger btn-icon hidden" id="back-to-top">
             <i class="mdi mdi-arrow-up"></i>
         </button>
-        <script src="js/bootstrap.min.js"></script>
+
+        <div class="modal fade" id="m-ban-user" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Khóa tài khoản</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" method="post" action="admin">
+
+                            <input type="hidden" name="user_id" />
+                            <input type="hidden" name="comment_id" />
+
+                            <div class="input-group mb-3 hide">
+                                <label class="col-12 col-md-3 control-label" for="ban_type">Loại:</label>
+                                <div class="col-md-9">
+                                    <select id="ban-type" name="ban_type" class="select2-list form-control">
+                                        <option value="1" selected>Vĩnh viễn</option>
+                                                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label class="col-12 col-md-3 control-label">Lý do: </label>
+                                <div class="col-md-9">
+
+                                    <div class="radio radio-styled">
+                                        <label class="md-check">
+                                            <input type="radio" name="reason" value="Nói tục" checked>
+                                            <i class="primary"></i>
+                                            <span>Nói tục</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="radio radio-styled">
+                                        <label class="md-check">
+                                            <input type="radio" name="reason" value="Quảng cáo site khác">
+                                            <i class="primary"></i>
+                                            <span>Quảng cáo site khác</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="radio radio-styled">
+                                        <label class="md-check">
+                                            <input type="radio" name="reason" value="Spam">
+                                            <i class="primary"></i>
+                                            <span>Spam</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="radio radio-styled">
+                                        <label class="md-check">
+                                            <input type="radio" name="reason" value="another" >
+                                            <i class="primary"></i>
+                                            <span>Khác</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label class="col-12 col-md-3 control-label">Lý do khác:</label>
+                                <div class="col-12 col-md-9">
+                                    <input type="text" name="another-reason" disabled value="" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <label class="col-md-3 control-label"></label>
+                                <div class="col-md-9">
+                                    <button type="submit" class="ban btn btn-success">Ban nick</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script src="https://files.imad.vn/admincp/assets/libs/bootstrap/bootstrap.min.js"></script>
         <script src="js/simplebar.min.js"></script>
         <script src="js/node-waves.min.js"></script>
         <script src="js/feather-icons.min.js"></script>
@@ -341,13 +416,7 @@
                     position: position
                 }).showToast();
             }
-            // // tooltip
-            // var tooltipTriggerList = [].slice.call(
-            //     document.querySelectorAll('[data-bs-toggle="tooltip"]')
-            // );
-            // tooltipTriggerList.map(function (tooltipTriggerEl) {
-            //     return new bootstrap.Tooltip(tooltipTriggerEl);
-            // });
+            // tooltip
 
             var tooltipTriggerList = [].slice.call(
                 document.querySelectorAll('[rel="tooltip"]')
@@ -364,12 +433,7 @@
             //     return new bootstrap.Popover(popoverTriggerEl);
             // });
         </script>
-        <script>
-            function setPhim(idphim, idvideo) {
-                localStorage.setItem("idphim", idphim);
-                localStorage.setItem("idvideo", idvideo);
-            }
-        </script>
+
 </body>
 
 </html>

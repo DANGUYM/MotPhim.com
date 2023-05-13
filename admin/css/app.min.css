@@ -2756,7 +2756,7 @@
 
 .avatar-sm {
     height: 3rem;
-    width: 4.5rem
+    width: 3rem
 }
 
 .avatar-md {
@@ -16566,4 +16566,16 @@ span.flatpickr-weekday {
 
 #explorecard-list .list-element:nth-child(-n+10) {
     display: block
+}
+
+.ql-container.ql-snow {
+    background: var(--vz-input-bg);
+}
+
+.ql-toolbar.ql-snow {
+    background: #e8e8e8;
+}
+
+.ql-editor::placeholder {
+    color: white;
 }

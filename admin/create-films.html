@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="vi" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-layout-style="default" data-layout-mode="dark" data-layout-width="fluid" data-layout-position="fixed">
+
+<head>
+    <title>Tạo phim mới - MotPhim Admin</title>
+    <!-- BEGIN META -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MotPhim Admin">
+    <!-- END META -->
+    <!-- BEGIN STYLESHEETS -->
+    <meta name="csrf-token" content="86oVxuoi5NgjC2NQnjUSQyonNWPhlYyFTuc2BkW5">
+    <link rel="shortcut icon" href="../assets/img/ico.png" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/sweetalert.css">
+    <link rel="stylesheet" href="css/jsvectormap.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/select2.min.css">
+    <link rel="stylesheet" href="css/toastify.css">
+    <!-- JS -->
+    <script src="js/layout.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Icons CSS -->
+    <link rel="stylesheet" href="https://pictogrammers.github.io/@mdi/font/5.4.55/css/materialdesignicons.min.css">
+    <!-- App CSS -->
+    <link rel="stylesheet" href="css/app.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.min.css">
+    <!-- CSS Quill Editor -->
+    <link href="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.snow.css" rel="stylesheet">
+    <!-- Nạp dữ liệu -->
+    <script src="../assets/js/data-film.js"></script>
+    <script src="../assets/js/data-video.js"></script>
+    <script src="../assets/js/data-users.js"></script>
+    <script src="../assets/js/data-comment.js"></script>
+</head>
+
+<body>
+    <div id="layout-wrapper">
+        <header id="page-topbar">
+            <div class="layout-width">
+                <div class="navbar-header">
+                    <div class="d-flex">
+                        <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+                                <span class="hamburger-icon">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </span>
+                            </button>
+                        <!-- App Search-->
+                        <form class="app-search d-none d-md-block">
+                            <div class="position-relative">
+                                <input type="text" class="form-control" placeholder="Tìm kiếm..." id="search-options" value="" name="q">
+                                <span class="mdi mdi-magnify search-widget-icon"></span>
+                                <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bx bx-search fs-22"></i>
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                                <form class="p-3" action>
+                                    <div class="form-group m-0">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Tìm kiếm..." name="q">
+                                            <button class="btn btn-primary" type="submit">
+                                                <i class="mdi mdi-magnify"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="dropdown ms-1 topbar-head-dropdown header-item">
+                            <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="mdi mdi-plus"></i>
+                                </button>
+                            <div class="dropdown-menu dropdown-menu-end" data-popper-placement="bottom-end" style="position: absolute; inset: 0px 0px auto auto; margin: 0px; transform: translate3d(0px, 58px, 0px);">
+                                <a href="create-films.html" class="dropdown-item notify-item py-2">
+                                    <span class="align-middle">Thêm phim</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="dropdown ms-sm-3 header-item topbar-user">
+                            <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="d-flex align-items-center">
+                                        <img
+                                            class="rounded-circle header-profile-user"
+                                            src="https://i.imgur.com/KbqwIdO.jpg"
+                                            id="useravatar"
+                                            alt="Header Avatar"
+                                        >
+                                        <span class="text-start ms-xl-2">
+                                            <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text" id="username">khangdora</span>
+                                            <span class="d-none d-xl-block ms-1 fs-12 text-muted user-name-sub-text">Admin</span>
+                                        </span>
+                                    </span>
+                                </button>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <!-- item-->
+                                <h6 class="dropdown-header" id="displayname">Welcome Võ Trường Khang!</h6>
+                                <a class="dropdown-item" href="../index.html">
+                                    <i class="mdi mdi-home-circle text-muted fs-16 align-middle me-1"></i>
+                                    <span class="align-middle">Ra trang chủ</span>
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item text-danger" href="#!" onclick="logout()">
+                                    <i class="bx bx-power-off font-size-16 align-middle me-1"></i>
+                                    <span>Đăng xuất</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- ========== App Menu ========== -->
+        <div class="app-menu navbar-menu">
+            <!-- LOGO -->
+            <div class="navbar-brand-box">
+                <a href="../admin/index.html" class="logo logo-light">
+                    <span>
+                            <img src="../assets/img/logo_white.png" alt="" height="30">
+                        </span>
+                </a>
+                <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                        <i class="mdi mdi-record-circle-outline"></i>
+                    </button>
+            </div>
+            <div id="scrollbar">
+                <div class="container-fluid">
+                    <div id="two-column-menu"></div>
+                    <ul class="navbar-nav" id="navbar-nav">
+                        <li class="menu-title">
+                            <span>Quản lý MotPhim</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="index.html">
+                                <i class="mdi mdi-view-dashboard"></i>
+                                <span>Tổng Quan</span>
+                            </a>
+                        </li>
+                        <!-- end Dashboard Menu -->
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="users.html">
+                                <i class="mdi mdi-account-circle-outline"></i>
+                                <span>Người dùng</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="films.html">
+                                <i class="mdi mdi-filmstrip"></i>
+                                <span>Phim</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link menu-link " href="comments.html">
+                                <i class="mdi mdi-comment"></i>
+                                <span>Bình luận</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Sidebar -->
+            </div>
+            <div class="sidebar-background"></div>
+        </div>
+        <!-- Left Sidebar End -->
+        <!-- Vertical Overlay-->
+        <div class="vertical-overlay"></div>
+        <div class="main-content">
+            <div class="page-content">
+                <div class="container-fluid">
+
+                    <div class="card d-flex">
+                        <div class="card-body">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="../admin/index.html">Home</a></li>
+                                <li class="breadcrumb-item"><a href="../admin/films.html">Phim</a></li>
+                                <li class="breadcrumb-item active">Thêm mới</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header align-items-center d-flex">
+                            <h4>Thêm phim mới</h4>
+                        </div>
+
+                        <div class="card-body">
+
+                            <form id="form-create-film" class="form-horizontal form-validate">
+                                <input type="hidden" name="_token" value="ZbzCp6qew4I8o64TGW5SrbC8lVEXph2pQ1ScZsNX">
+                                <div class="input-group mb-3">
+                                    <label class="col-12 col-md-2 control-label">Tên phim:</label>
+                                    <div class="col-12 col-md-8">
+                                        <input type="text" name="name" value="" class="form-control" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <label class="col-12 col-md-2 control-label">Tên khác:</label>
+                                    <div class="col-12 col-md-8">
+                                        <input type="text" name="name_vi" value="" class="form-control" required autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <label class="col-12 col-md-2 control-label">Movie (1 tập): </label>
+                                    <div class="form-check form-check-success">
+                                        <input class="form-check-input" type="checkbox" name="is_movie">
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <label class="col-12 col-md-2 control-label">Thời lượng (<span class="text-danger" id="time-type">tập</span>):</label>
+                                    <div class="col-md-2">
+                                        <input type="number" min="1" name="time" autocomplete="off" class="form-control">
+
+                                    </div>
+                                    <input type="hidden" name="time_type" value="tập">
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <label class="col-12 col-md-2 control-label" for="input18">Thể loại:</label>
+                                    <div class="genre col-12 col-md-8">
+                                        <select required name="genres[]" class="select2-list form-control" multiple size="5" data-placeholder="Chọn thể loại...">
+													<option  value="1">Hành Động</option>
+													<option  value="2">Viễn Tưởng</option>
+													<option  value="3">Lãng Mạn</option>
+													<option  value="4">Kinh Dị</option>
+													<option  value="5">Võ Thuật</option>
+													<option  value="6">Hài Hước</option>
+													<option  value="7">Trường Học</option>
+													<option  value="8">Trinh Thám</option>
+													<option  value="9">Âm Nhạc</option>
+													<option  value="10">Chuyển Sinh</option>
+													<option  value="35">Phiêu Lưu</option>
+													<option  value="36">Siêu Nhiên</option>
+													<option  value="37">Đời Thường</option>
+													<option  value="38">Giả Tưởng</option>
+													<option  value="39">Robot</option>
+													<option  value="40">Game</option>
+													<option  value="41">Thể Thao</option>
+													<option  value="42">Kịch Tính</option>
+													<option  value="43">Pháp Thuật</option>
+											</select>
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <label class="col-12 col-md-2 control-label" for="input22">Quốc gia:</label>
+                                    <div class="col-12 col-md-8">
+                                        <select required id="country" name="countrys[]" class="select2-list form-control" multiple data-placeholder="Chọn quốc gia...">
+                                            <option value="1">Hoa Kỳ</option>
+                                            <option value="2">Trung Quốc</option>
+                                            <option value="3">Nhật Bản</option>
+                                            <option value="4">Đức</option>
+                                            <option value="5">Anh</option>
+                                            <option value="6">Pháp</option>
+                                            <option value="7">Ấn Độ</option>
+                                            <option value="8">Ý</option>
+                                            <option value="9">Canada</option>
+                                            <option value="10">Hàn Quốc</option>
+                                            <option value="11">Australia</option>
+                                            <option value="12">Tây Ban Nha</option>
+                                            <option value="13">Mexico</option>
+                                            <option value="14">Indonesia</option>
+                                            <option value="15">Thổ Nhĩ Kỳ</option>
+                                            <option value="16">Hà Lan</option>
+                                            <option value="17">Thụy Điển</option>
+                                            <option value="18">Thụy Sĩ</option>
+                                            <option value="19">Ba Lan</option>
+                                            <option value="20">Belgium</option>
+                                            <option value="21">Argentina</option>
+                                            <option value="22">Nauy</option>
+                                            <option value="23">Áo</option>
+                                            <option value="24">Đan Mạch</option>
+                                            <option value="25">Singapore</option>
+                                            <option value="26">Phần Lan</option>
+                                            <option value="27">Úc</option>
+                                            <option value="28">Nam Phi</option>
+                                            <option value="29">Brazil</option>
+                                            <option value="30">Thái Lan</option>
+                                            <option value="31">Saudi Arabia</option>
+                                            <option value="32">Iran</option>
+                                            <option value="33">Ai Cập</option>
+                                            <option value="34">Ba Lan</option>
+                                            <option value="35">Malaysia</option>
+                                            <option value="36">Nga</option>
+                                            <option value="37">Colombia</option>
+                                            <option value="38">Chile</option>
+                                            <option value="39">Bồ Đào Nha</option>
+                                            <option value="40">Hồng Kông</option>
+                                            <option value="41">Việt Nam</option>
+                                            <option value="42">Hy Lạp</option>
+                                            <option value="43">Bỉ</option>
+                                            <option value="44">Israel</option>
+                                            <option value="45">Thổ Nhĩ Kỳ</option>
+                                            <option value="46">Cộng hòa Séc</option>
+                                            <option value="47">Jordan</option>
+                                            <option value="48">Hungary</option>
+                                            <option value="49">Cuba</option>
+                                            <option value="50">Các Tiểu Vương quốc Ả Rập Thống nhất</option>
+                                            <option value="51">Bulgaria</option>
+                                            <option value="52">Ecuador</option>
+                                            <option value="53">Lebanon</option>
+                                            <option value="54">New Zealand</option>
+                                            <option value="55">Slovakia</option>
+                                            <option value="56">Sri Lanka</option>
+                                            <option value="57">Tunisia</option>
+                                            <option value="58">Dominican Republic</option>
+                                            <option value="59">Ethiopia</option>
+                                            <option value="60">Ghana</option>
+                                            <option value="61">Kenya</option>
+                                            <option value="62">Kuwait</option>
+                                            <option value="63">Morocco</option>
+                                            <option value="64">Oman</option>
+                                            <option value="65">Panama</option>
+                                            <option value="66">Qatar</option>
+                                            <option value="67">Slovenia</option>
+                                            <option value="68">Luxembourg</option>
+                                            <option value="69">Costa Rica</option>
+                                            <option value="70">Croatia</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <label class="col-12 col-md-2 control-label">Trailer (Youtube):</label>
+                                    <div class="col-12 col-md-8">
+                                        <input type="text" name="trailer" class="form-control">
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <label class="col-12 col-md-2 control-label">Giới thiệu phim: (<span id="word-text">0</span>) </label>
+                                    <div class="col-12 col-md-8 mb-5" style="height: 200px">
+                                        <textarea required minlength="160" name="description" rows="10" id="word-count" class="form-control quilljs-textarea"></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="input-group mb-3">
+                                    <label class="col-12 col-md-2"></label>
+                                    <div class="col-md-2">
+                                        <button class="btn btn-success" id="btn-films">Thêm Phim</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script> © MotPhim.
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="text-sm-end d-none d-sm-block">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!--start back-to-top-->
+        <button onclick="topFunction()" class="btn btn-danger btn-icon hidden" id="back-to-top">
+            <i class="mdi mdi-arrow-up"></i>
+        </button>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/simplebar.min.js"></script>
+        <script src="js/node-waves.min.js"></script>
+        <script src="js/feather-icons.min.js"></script>
+        <script src="js/lord-icon-2.1.0.min.js"></script>
+        <script src="js/app.min.js"></script>
+        <script src="js/sweetalert.min.js"></script>
+        <script src="js/select2.min.js"></script>
+        <script src="js/toastify.js"></script>
+
+        <!--Quill Editor-->
+        <script src="https://cdn.jsdelivr.net/npm/quill@1.3.7/dist/quill.min.js"></script>
+
+        <!--Load dữ liệu-->
+        <script src="js/load.js"></script>
+
+        <script type="text/javascript">
+            function removeSlow(element, time) {
+                time = typeof time !== 'undefined' ? time : 700;
+                element.fadeOut(time, function() {
+                    $(this).remove();
+                });
+            }
+
+            // function notifyWhat(type, text, seconds, position) {
+            //     if (type == 's') {
+            //         type = 'bg-success';
+            //     } else if (type == 'e') {
+            //         type = 'bg-danger';
+            //         if (!text) {
+            //             text = 'Lỗi nha!';
+            //         }
+            //     } else if (type == 'w') {
+            //         type = 'bg-warning';
+            //     }
+            //     if (!seconds) {
+            //         seconds = 3;
+            //     }
+            //     if (!position) {
+            //         position = 'center';
+            //     }
+            //     Toastify({
+            //         text: text,
+            //         className: type,
+            //         duration: seconds * 1000,
+            //         position: position
+            //     }).showToast();
+            // }
+            // // tooltip
+            // var tooltipTriggerList = [].slice.call(
+            //     document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            // );
+            // tooltipTriggerList.map(function (tooltipTriggerEl) {
+            //     return new bootstrap.Tooltip(tooltipTriggerEl);
+            // });
+
+            var tooltipTriggerList = [].slice.call(
+                document.querySelectorAll('[rel="tooltip"]')
+            );
+            tooltipTriggerList.map(function(tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // // popover
+            // var popoverTriggerList = [].slice.call(
+            //     document.querySelectorAll('[data-bs-toggle="popover"]')
+            // );
+            // popoverTriggerList.map(function (popoverTriggerEl) {
+            //     return new bootstrap.Popover(popoverTriggerEl);
+            // });
+        </script>
+        <script>
+            $(document).ready(function() {
+                $('.select2-list').select2();
+            });
+
+            function quilljs_textarea(selector = null, options = null) {
+                if (selector) {
+                    var elements = Array.prototype.slice.call(document.querySelectorAll(selector));
+                } else {
+                    var elements = Array.prototype.slice.call(document.querySelectorAll('[data-quilljs]'));
+                }
+                console.log(elements)
+                elements.forEach(function(el) {
+                    if (selector && el.hasAttribute("data-quilljs")) {
+                        return;
+                    }
+                    var type = el.type;
+                    if (type == 'textarea') {
+                        value = el.value;
+                        container = document.createElement('div');
+                        container.innerHTML = value;
+                        el.parentNode.insertBefore(container, el.nextSibling);
+                        el.style.display = "none";
+                        var placeholder = el.placeholder;
+                    } else {
+                        var placeholder = null;
+                        container = el;
+                    }
+                    if (!options) {
+                        var defaults = {
+                            theme: 'snow',
+                            placeholder: placeholder,
+                        };
+                    } else {
+                        if (!options.placeholder) {
+                            options.placeholder = placeholder;
+                        }
+                        var defaults = options;
+                    }
+
+                    var editor = new Quill(container, defaults);
+                    editor.on('text-change', function() {
+                        var text = editor.root.innerHTML;
+                        el.value = text;
+                    });
+                });
+            }
+
+            quilljs_textarea('.quilljs-textarea', {
+                modules: {
+                    toolbar: [
+                        ['bold', 'italic', 'underline'], // toggled buttons
+                        ['link'],
+                        [{
+                            'list': 'ordered'
+                        }, {
+                            'list': 'bullet'
+                        }],
+                        // ['link', 'image'],
+                        [{
+                            'color': ['black', 'white', 'red', 'blue', 'green', 'grey', 'pink']
+                        }], // dropdown with defaults from theme
+                        ['clean']
+                    ]
+                },
+                theme: 'snow',
+            });
+        </script>
+</body>
+
+</html>

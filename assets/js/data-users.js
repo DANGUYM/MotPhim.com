@@ -5,6 +5,7 @@ let user1 = {
     password: '123',
     coin: '10000',
     avatar: 'https://i.imgur.com/KbqwIdO.jpg',
+    email: 'khangdora2809@gmail.com',
     permission: 2 //0 thường - 1 vip - 2 admin
 }
 
@@ -15,6 +16,7 @@ let user2 = {
     password: '123',
     coin: '10000',
     avatar: 'https://i.imgur.com/mqooK8G.png',
+    email: '',
     permission: 2
 }
 
@@ -25,6 +27,7 @@ let user3 = {
     password: '123',
     coin: 0,
     avatar: 'https://i.imgur.com/RluIHMV.jpg',
+    email: '',
     permission: 0
 }
 
@@ -35,6 +38,7 @@ let user4 = {
     password: '123',
     coin: '5000',
     avatar: 'https://i.imgur.com/RluIHMV.jpg',
+    email: '',
     permission: 1
 }
 
